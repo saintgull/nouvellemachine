@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nouvelle Machine — site en construction</title>
+<title>Nouvelle Machine — l'IA et sa sûreté, depuis Paris</title>
+<meta name="description" content="Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité — des écrits, des rencontres et des dîners hebdomadaires à Paris, en français et en anglais.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +32,22 @@
   .badge{display:inline-block;margin-top:18px;background:var(--cotton-rose);color:var(--magenta-bloom);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
   .hero p.lead{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:600px;margin:24px auto 4px}
   .hero p.en{color:var(--light-coral);font-style:italic;font-family:var(--serif);font-size:1.15rem}
+  .cta-row{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--medium-blue);color:#fff;font-weight:500;font-size:.95rem;padding:11px 24px;border-radius:999px;border:1.5px solid var(--medium-blue);transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-2px);text-decoration:none;background:#0500a3}
+  .btn.ghost{background:transparent;color:var(--medium-blue)}
+  .btn.ghost:hover{background:var(--cotton-rose);color:var(--medium-blue)}
   .herolinks{margin-top:20px;font-size:.9rem;letter-spacing:.02em}
   .herolinks a{color:var(--magenta-bloom);font-weight:500}
+
+  .featured{padding:8px 0 8px}
+  a.feat{display:block;max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--cotton-rose);border-radius:16px;padding:28px 30px;transition:transform .15s,border-color .15s;color:var(--ink)}
+  a.feat:hover{transform:translateY(-3px);border-color:var(--magenta-bloom);text-decoration:none}
+  .feat-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:600}
+  a.feat h2{font-size:clamp(1.4rem,3vw,1.9rem);color:var(--medium-blue);margin:10px 0 10px}
+  a.feat p{font-size:1rem;color:var(--ink);opacity:.85}
+  a.feat .go{color:var(--magenta-bloom);font-size:.85rem;font-weight:500;margin-top:14px;display:inline-block}
+  .section-lead{max-width:600px;margin:0 auto 34px;text-align:center;font-size:1rem;color:var(--ink);opacity:.8}
 
   section{padding:24px 0 72px}
   .section-title{font-size:clamp(1.7rem,4vw,2.4rem);text-align:center;margin-bottom:6px;font-family:var(--serif);color:var(--ink)}
@@ -55,15 +70,28 @@
 <header class="hero"><div class="wrap">
   <p class="kicker">Paris · bilingue FR / EN</p>
   <h1>Nouvelle Machine</h1>
-  <div class="badge">Site en construction</div>
-  <p class="lead">Le site arrive bientôt. En attendant, si l'IA et sa sécurité vous intriguent, voici par où commencer.</p>
-  <p class="en">Site coming soon. Meanwhile, here's where to start.</p>
-  <p class="herolinks"><a href="/about">À propos</a> · <a href="/faire-de-la-surete-de-lia-une-cause">Premier article</a> · <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Newsletter</a></p>
+  <p class="lead">Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité — des écrits, des rencontres, et des dîners hebdomadaires à Paris.</p>
+  <p class="en">A newsletter and a community thinking about AI and its safety, from Paris.</p>
+  <p class="cta-row">
+    <a class="btn" href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">S'abonner</a>
+    <a class="btn ghost" href="https://luma.com/nouvellemachine" target="_blank" rel="noopener">Venir à un dîner</a>
+  </p>
+  <p class="herolinks"><a href="/faire-de-la-surete-de-lia-une-cause">Dernier article</a> · <a href="/about">À propos</a></p>
 </div></header>
+
+<section class="featured"><div class="wrap">
+  <a class="feat" href="/faire-de-la-surete-de-lia-une-cause">
+    <span class="feat-label">Dernier article</span>
+    <h2>Faire de la sûreté de l'IA une cause grand public au même titre que le climat, par l'éducation</h2>
+    <p>Le grand public est déjà inquiet face à l'IA, mais il n'a aucun cadre pour comprendre ses intuitions ni aucun moyen concret de passer à l'action.</p>
+    <span class="go">Lire l'article →</span>
+  </a>
+</div></section>
 
 <section><div class="wrap">
   <h2 class="section-title">Pour commencer</h2>
   <p class="section-sub">Where to actually start.</p>
+  <p class="section-lead">Envie de comprendre l'IA et sa sûreté, ou de vous y impliquer ? Voici une sélection de bons points de départ.</p>
   <div class="grid3">
     <a class="res" href="https://cesia.org" target="_blank" rel="noopener"><h3>CeSIA</h3><p>Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.</p><span class="go">cesia.org →</span></a>
     <a class="res" href="https://ml4good.org" target="_blank" rel="noopener"><h3>ML4Good</h3><p>Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.</p><span class="go">ml4good.org →</span></a>
