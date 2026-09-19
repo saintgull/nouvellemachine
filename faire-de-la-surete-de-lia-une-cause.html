@@ -19,6 +19,7 @@
   :root{
     --pearl-aqua:#7cdedc;--medium-blue:#0700cc;--cotton-rose:#ffcfd2;
     --light-coral:#ea8885;--magenta-bloom:#e0486b;--ink:#14142e;--paper:#fffdfa;
+    --light-blue:#9bb8ef;--light-blue-wash:rgba(155,184,239,.12);
     --serif:'Instrument Serif',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -27,10 +28,7 @@
   a{color:var(--medium-blue);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
   a:hover{color:var(--magenta-bloom)}
 
-  .hero{padding:72px 0 32px;
-    background:
-      radial-gradient(62% 60% at 88% -8%, rgba(124,222,220,.5), transparent 72%),
-      radial-gradient(80% 80% at 4% 118%, rgba(255,207,210,.8), transparent 74%);}
+  .hero{padding:72px 0 32px;background:var(--paper)}
   .backlink{display:inline-block;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:500;margin-bottom:22px;text-decoration:none}
   h1{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(2rem,5.4vw,3.1rem);color:var(--medium-blue)}
   .dek{font-family:var(--serif);font-style:italic;color:var(--light-coral);font-size:1.2rem;margin-top:16px;line-height:1.4}
@@ -41,10 +39,10 @@
   article strong{font-weight:600;color:var(--ink)}
   article em{font-style:italic}
 
-  .cta{margin:36px 0 16px;padding:28px 24px;background:#fff;border:1px solid var(--cotton-rose);border-radius:16px;text-align:center}
+  .cta{margin:36px 0 16px;padding:28px 24px;background:#fff;border:1px solid var(--light-blue);border-radius:0;text-align:center}
   .cta h2{font-family:var(--serif);font-weight:400;font-size:1.5rem;color:var(--ink);margin-bottom:4px}
   .cta p.sub{color:var(--light-coral);font-family:var(--serif);font-size:1.05rem;margin-bottom:20px}
-  .embed-frame{width:100%;max-width:440px;height:150px;border:1px solid var(--cotton-rose);border-radius:14px;background:#fff;margin:0 auto 14px;display:block}
+  .embed-frame{width:100%;max-width:440px;height:150px;border:1px solid var(--light-blue);border-radius:0;background:#fff;margin:0 auto 14px;display:block}
   .cta .onsub a{color:var(--magenta-bloom);font-weight:500;font-size:.95rem}
 
   footer{padding:44px 0;text-align:center;border-top:1px solid var(--cotton-rose);font-size:.9rem;margin-top:24px}

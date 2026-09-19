@@ -14,6 +14,7 @@
   :root{
     --pearl-aqua:#7cdedc;--medium-blue:#0700cc;--cotton-rose:#ffcfd2;
     --light-coral:#ea8885;--magenta-bloom:#e0486b;--ink:#14142e;--paper:#fffdfa;
+    --light-blue:#9bb8ef;--light-blue-wash:rgba(155,184,239,.12);
     --serif:'Instrument Serif',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -23,26 +24,23 @@
   a:hover{text-decoration:underline}
   h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}
 
-  .hero{padding:104px 0 64px;text-align:center;
-    background:
-      radial-gradient(62% 60% at 88% -8%, rgba(124,222,220,.55), transparent 72%),
-      radial-gradient(80% 80% at 4% 118%, rgba(255,207,210,.85), transparent 74%);}
+  .hero{padding:104px 0 64px;text-align:center;background:var(--paper)}
   .kicker{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:500;margin-bottom:18px}
   .hero h1{font-size:clamp(3rem,9vw,6rem);color:var(--medium-blue)}
   .badge{display:inline-block;margin-top:18px;background:var(--cotton-rose);color:var(--magenta-bloom);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
   .hero p.lead{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:600px;margin:24px auto 4px}
   .hero p.en{color:var(--light-coral);font-style:italic;font-family:var(--serif);font-size:1.15rem}
   .cta-row{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .btn{display:inline-block;background:var(--medium-blue);color:#fff;font-weight:500;font-size:.95rem;padding:11px 24px;border-radius:999px;border:1.5px solid var(--medium-blue);transition:transform .15s,background .15s}
-  .btn:hover{transform:translateY(-2px);text-decoration:none;background:#0500a3}
-  .btn.ghost{background:transparent;color:var(--medium-blue)}
-  .btn.ghost:hover{background:var(--cotton-rose);color:var(--medium-blue)}
+  .btn{display:inline-block;background:var(--medium-blue);color:#fff;font-weight:500;font-size:.95rem;padding:11px 24px;border-radius:0;border:1.5px solid var(--medium-blue);transition:background .15s}
+  .btn:hover{text-decoration:none;background:#0500a3}
+  .btn.ghost{background:transparent;color:var(--medium-blue);border-color:var(--light-blue)}
+  .btn.ghost:hover{background:var(--light-blue-wash);color:var(--medium-blue)}
   .herolinks{margin-top:20px;font-size:.9rem;letter-spacing:.02em}
   .herolinks a{color:var(--magenta-bloom);font-weight:500}
 
   .featured{padding:8px 0 8px}
-  a.feat{display:block;max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--cotton-rose);border-radius:16px;padding:28px 30px;transition:transform .15s,border-color .15s;color:var(--ink)}
-  a.feat:hover{transform:translateY(-3px);border-color:var(--magenta-bloom);text-decoration:none}
+  a.feat{display:block;max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--light-blue);border-radius:0;padding:28px 30px;transition:background .15s;color:var(--ink)}
+  a.feat:hover{background:var(--light-blue-wash);text-decoration:none}
   .feat-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:600}
   a.feat h2{font-size:clamp(1.4rem,3vw,1.9rem);color:var(--medium-blue);margin:10px 0 10px}
   a.feat p{font-size:1rem;color:var(--ink);opacity:.85}
@@ -54,8 +52,8 @@
   .section-sub{color:var(--light-coral);font-family:var(--serif);font-size:1.15rem;text-align:center;margin-bottom:36px}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:720px){.grid3{grid-template-columns:1fr}}
-  a.res{display:block;background:#fff;border-radius:14px;padding:22px;border:1px solid var(--cotton-rose);transition:transform .15s,border-color .15s;color:var(--ink)}
-  a.res:hover{transform:translateY(-3px);border-color:var(--magenta-bloom);text-decoration:none}
+  a.res{display:block;background:#fff;border-radius:0;padding:22px;border:1px solid var(--light-blue);transition:background .15s;color:var(--ink)}
+  a.res:hover{background:var(--light-blue-wash);text-decoration:none}
   .res h3{font-size:1.3rem;color:var(--medium-blue);margin-bottom:6px}
   .res p{font-size:.9rem}
   .res .go{color:var(--magenta-bloom);font-size:.82rem;font-weight:500;margin-top:10px;display:inline-block}
@@ -70,7 +68,7 @@
 <header class="hero"><div class="wrap">
   <p class="kicker">Paris · bilingue FR / EN</p>
   <h1>Nouvelle Machine</h1>
-  <p class="lead">Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité — des écrits, des rencontres, et des dîners hebdomadaires à Paris.</p>
+  <p class="lead">Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité : des écrits, des rencontres, et des dîners hebdomadaires à Paris.</p>
   <p class="en">A newsletter and a community thinking about AI and its safety, from Paris.</p>
   <p class="cta-row">
     <a class="btn" href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">S'abonner</a>
