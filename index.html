@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nouvelle Machine — site en construction</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pearl-aqua:#7cdedc;--medium-blue:#0700cc;--cotton-rose:#ffcfd2;
+    --light-coral:#ea8885;--magenta-bloom:#e0486b;--ink:#14142e;--paper:#fffdfa;
+    --serif:'Instrument Serif',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-weight:300;overflow-x:hidden}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  a{color:var(--medium-blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}
+
+  .hero{padding:104px 0 64px;text-align:center;
+    background:
+      radial-gradient(62% 60% at 88% -8%, rgba(124,222,220,.55), transparent 72%),
+      radial-gradient(80% 80% at 4% 118%, rgba(255,207,210,.85), transparent 74%);}
+  .kicker{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:500;margin-bottom:18px}
+  .hero h1{font-size:clamp(3rem,9vw,6rem);color:var(--medium-blue)}
+  .badge{display:inline-block;margin-top:18px;background:var(--cotton-rose);color:var(--magenta-bloom);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+  .hero p.lead{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:600px;margin:24px auto 4px}
+  .hero p.en{color:var(--light-coral);font-style:italic;font-family:var(--serif);font-size:1.15rem}
+  .herolinks{margin-top:20px;font-size:.9rem;letter-spacing:.02em}
+  .herolinks a{color:var(--magenta-bloom);font-weight:500}
+
+  section{padding:24px 0 72px}
+  .section-title{font-size:clamp(1.7rem,4vw,2.4rem);text-align:center;margin-bottom:6px;font-family:var(--serif);color:var(--ink)}
+  .section-sub{color:var(--light-coral);font-family:var(--serif);font-size:1.15rem;text-align:center;margin-bottom:36px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:720px){.grid3{grid-template-columns:1fr}}
+  a.res{display:block;background:#fff;border-radius:14px;padding:22px;border:1px solid var(--cotton-rose);transition:transform .15s,border-color .15s;color:var(--ink)}
+  a.res:hover{transform:translateY(-3px);border-color:var(--magenta-bloom);text-decoration:none}
+  .res h3{font-size:1.3rem;color:var(--medium-blue);margin-bottom:6px}
+  .res p{font-size:.9rem}
+  .res .go{color:var(--magenta-bloom);font-size:.82rem;font-weight:500;margin-top:10px;display:inline-block}
+
+  footer{padding:44px 0;text-align:center;border-top:1px solid var(--cotton-rose);font-size:.9rem}
+  footer .brand{font-family:var(--serif);color:var(--medium-blue);font-size:1.4rem;display:block;margin-bottom:8px}
+  footer .socials{display:flex;gap:20px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <p class="kicker">Paris · bilingue FR / EN</p>
+  <h1>Nouvelle Machine</h1>
+  <div class="badge">Site en construction</div>
+  <p class="lead">Le site arrive bientôt. En attendant, si l'IA et sa sécurité vous intriguent, voici par où commencer.</p>
+  <p class="en">Site coming soon. Meanwhile, here's where to start.</p>
+  <p class="herolinks"><a href="/about">À propos</a> · <a href="/faire-de-la-surete-de-lia-une-cause">Premier article</a> · <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Newsletter</a></p>
+</div></header>
+
+<section><div class="wrap">
+  <h2 class="section-title">Pour commencer</h2>
+  <p class="section-sub">Where to actually start.</p>
+  <div class="grid3">
+    <a class="res" href="https://cesia.org" target="_blank" rel="noopener"><h3>CeSIA</h3><p>Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.</p><span class="go">cesia.org →</span></a>
+    <a class="res" href="https://ml4good.org" target="_blank" rel="noopener"><h3>ML4Good</h3><p>Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.</p><span class="go">ml4good.org →</span></a>
+    <a class="res" href="https://bluedot.org" target="_blank" rel="noopener"><h3>BlueDot Impact</h3><p>Des cours en ligne guidés, de l'introduction aux parcours techniques et gouvernance.</p><span class="go">bluedot.org →</span></a>
+    <a class="res" href="https://80000hours.org" target="_blank" rel="noopener"><h3>80,000 Hours</h3><p>Comment orienter sa carrière pour avoir le plus d'impact, avec un gros volet sécurité de l'IA.</p><span class="go">80000hours.org →</span></a>
+    <a class="res" href="https://apartresearch.com" target="_blank" rel="noopener"><h3>Apart Research</h3><p>Des sprints de recherche en week-end, un bon premier projet concret.</p><span class="go">apartresearch.com →</span></a>
+    <a class="res" href="https://pauseai.info" target="_blank" rel="noopener"><h3>PauseAI</h3><p>Le versant plaidoyer et mobilisation, en France et à l'international.</p><span class="go">pauseai.info →</span></a>
+    <a class="res" href="https://www.youtube.com/@LeFuturologue" target="_blank" rel="noopener"><h3>Le Futurologue</h3><p>Interviews et débats en français sur les enjeux de l'IA, par Shaïman Thürler.</p><span class="go">youtube · Le Futurologue →</span></a>
+    <a class="res" href="https://www.altruismeefficacefrance.org" target="_blank" rel="noopener"><h3>Altruisme Efficace France</h3><p>La communauté française qui cherche à faire le plus de bien possible, IA comprise.</p><span class="go">altruismeefficacefrance.org →</span></a>
+    <a class="res" href="https://www.youtube.com/@Science4All" target="_blank" rel="noopener"><h3>Science4All</h3><p>Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.</p><span class="go">youtube · Science4All →</span></a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span class="brand">Nouvelle Machine</span>
+  <p>Paris · aussi sur <a href="https://cityaligned.com" target="_blank" rel="noopener">City Aligned</a> · <a href="https://cal.com/saintgull/call">me contacter</a></p>
+  <div class="socials">
+    <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Substack</a>
+    <a href="https://www.instagram.com/nouvellemachine" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@nouvellemachine" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://twitter.com/nouvellemachine" target="_blank" rel="noopener">Twitter</a>
+    <a href="https://www.linkedin.com/in/erinsaintgull/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></footer>
+
+</body>
+</html>

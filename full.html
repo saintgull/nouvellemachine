@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nouvelle Machine — la sécurité de l'IA à Paris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pearl-aqua:#7cdedc;--medium-blue:#0700cc;--cotton-rose:#ffcfd2;
+    --light-coral:#ea8885;--magenta-bloom:#e0486b;--ink:#14142e;--paper:#fffdfa;
+    --serif:'Instrument Serif',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-weight:300;overflow-x:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:var(--medium-blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:.01em}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,253,250,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--cotton-rose)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+  .brand{font-family:var(--serif);font-size:1.7rem;color:var(--medium-blue)}
+  .navlinks{display:flex;gap:26px;align-items:center;font-size:.95rem}
+  .navlinks a{color:var(--ink)}
+  .btn{display:inline-block;background:var(--magenta-bloom);color:#fff;padding:10px 20px;border-radius:999px;font-weight:500;font-size:.95rem;transition:background .15s;border:none;cursor:pointer;font-family:var(--sans)}
+  .btn:hover{background:var(--light-coral);text-decoration:none}
+  .navlinks .btn{color:#fff}
+  @media(max-width:640px){.navlinks a:not(.btn){display:none}}
+
+  /* hero: continuous glows that fade to transparent (no hard cut), rose bleeds down into events */
+  .hero{padding:100px 0 96px;text-align:center;
+    background:
+      radial-gradient(62% 60% at 88% -8%, rgba(124,222,220,.55), transparent 72%),
+      radial-gradient(80% 75% at 4% 112%, rgba(255,207,210,.85), transparent 74%);}
+  .hero h1{font-size:clamp(3.2rem,9vw,6.2rem);color:var(--medium-blue)}
+  .hero .kicker{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:500;margin-bottom:18px}
+  .hero p.lead{font-size:clamp(1.1rem,2.4vw,1.45rem);max-width:620px;margin:22px auto 8px}
+  .hero p.en{color:var(--light-coral);font-style:italic;font-family:var(--serif);font-size:1.2rem}
+  .hero .cta{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn.ghost{background:transparent;color:var(--medium-blue);border:1.5px solid var(--medium-blue)}
+  .btn.ghost:hover{background:var(--medium-blue);color:#fff}
+
+  section{padding:76px 0}
+  .section-title{font-size:clamp(2rem,5vw,3rem);margin-bottom:8px}
+  .section-sub{color:var(--light-coral);font-family:var(--serif);font-size:1.2rem;margin-bottom:40px}
+
+  /* events: thick continuous cotton-rose wash, flowing on from the hero's bottom glow */
+  .events-sec{background:linear-gradient(180deg, rgba(255,207,210,.7) 0%, rgba(255,207,210,.25) 45%, var(--paper) 90%)}
+  .events{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:720px){.events{grid-template-columns:1fr}}
+  .card{border:1.5px solid var(--ink);border-radius:18px;padding:30px;background:#fff;transition:transform .15s}
+  .card:hover{transform:translateY(-3px)}
+  .card .tag{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:5px 12px;border-radius:999px;margin-bottom:16px}
+  .tag.rose{background:var(--cotton-rose);color:var(--magenta-bloom)}
+  .tag.aqua{background:var(--pearl-aqua);color:var(--medium-blue)}
+  .card h3{font-size:2rem;margin-bottom:6px}
+  .card .when{font-weight:500;color:var(--magenta-bloom);margin-bottom:12px;font-size:.95rem}
+  .card p{margin-bottom:20px}
+
+  .band-aqua{background:linear-gradient(180deg,var(--paper),rgba(124,222,220,.4) 55%,var(--paper))}
+  .band-rose{background:linear-gradient(180deg,var(--paper),rgba(255,207,210,.55) 55%,var(--paper))}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:720px){.grid3{grid-template-columns:1fr}}
+  a.res{display:block;background:#fff;border-radius:14px;padding:22px;border:1px solid var(--cotton-rose);transition:transform .15s,border-color .15s;color:var(--ink)}
+  a.res:hover{transform:translateY(-3px);border-color:var(--magenta-bloom);text-decoration:none}
+  .res h3{font-size:1.35rem;color:var(--medium-blue);margin-bottom:6px}
+  .res p{font-size:.92rem}
+  .res .go{color:var(--magenta-bloom);font-size:.85rem;font-weight:500;margin-top:10px;display:inline-block}
+
+  .calbox{background:#fff;border:1.5px dashed var(--pearl-aqua);border-radius:18px;padding:44px;text-align:center}
+  .calbox h3{font-size:1.8rem;color:var(--medium-blue);margin-bottom:10px}
+
+  .lettre{text-align:center;background:var(--medium-blue);color:#fff;border-radius:24px;padding:56px 28px;margin:0 24px}
+  .lettre h2{color:#fff;font-size:clamp(2rem,5vw,3rem)}
+  .lettre p{max-width:520px;margin:14px auto 28px;color:var(--cotton-rose)}
+  .signup{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:460px;margin:0 auto}
+  .signup input{flex:1;min-width:220px;padding:12px 18px;border-radius:999px;border:none;font-family:var(--sans);font-size:1rem}
+  .lettre .btn{background:var(--pearl-aqua);color:var(--medium-blue)}
+  .lettre .btn:hover{background:#fff}
+  .lettre small{display:block;margin-top:16px;color:var(--pearl-aqua);opacity:.85}
+
+  footer{padding:48px 0;text-align:center;border-top:1px solid var(--cotton-rose);font-size:.9rem}
+  footer .brand{font-size:1.4rem;display:block;margin-bottom:10px}
+  footer .socials{display:flex;gap:20px;justify-content:center;margin-top:10px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="brand">Nouvelle Machine</span>
+  <div class="navlinks">
+    <a href="#evenements">Événements</a>
+    <a href="#calendrier">Calendrier</a>
+    <a href="#ressources">Ressources</a>
+    <a href="#lettre" class="btn">S'abonner</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="kicker">Paris · bilingue FR / EN</p>
+  <h1>Nouvelle Machine</h1>
+  <p class="lead">Comprendre où va l'IA, et sa sécurité, autour d'une table. Sans prérequis, sans jargon, avec les gens qui construisent et celles et ceux que ça intrigue.</p>
+  <p class="en">Making sense of AI and AI safety, together, in Paris.</p>
+  <div class="cta">
+    <a href="#evenements" class="btn">Voir les événements</a>
+    <a href="#lettre" class="btn ghost">Recevoir les nouvelles</a>
+  </div>
+</div></header>
+
+<section id="evenements" class="events-sec"><div class="wrap">
+  <h2 class="section-title">Les rendez-vous</h2>
+  <p class="section-sub">Two ways in, every week.</p>
+  <div class="events">
+    <div class="card">
+      <span class="tag rose">Tous les lundis</span>
+      <h3>Dîner Machine</h3>
+      <p class="when">Lundi 19h – 21h · HD Diner, Châtelet</p>
+      <p>Un dîner tech hebdomadaire pour parler de ce qu'on construit et d'où va l'IA, sa sécurité comprise. On mange, on discute, on repart en connaissant du monde. Options vegan. On commande à 19h30, donc venez à l'heure.</p>
+      <a href="https://luma.com/6f4s4lrv" class="btn">RSVP</a>
+    </div>
+    <div class="card">
+      <span class="tag aqua">Certains samedis</span>
+      <h3>Banc d'Essai</h3>
+      <p class="when">Samedi après-midi · à partir de fin septembre</p>
+      <p>Le build club. On passe à la pratique sur de petits projets concrets, une éval, une traduction, un premier article, pour commencer à avoir un impact dans le domaine, à son rythme.</p>
+      <a href="#lettre" class="btn ghost">Être prévenu·e</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="calendrier" class="band-aqua"><div class="wrap">
+  <h2 class="section-title">Ce qui se passe à Paris</h2>
+  <p class="section-sub">A curated agenda of the Paris AI &amp; safety scene.</p>
+  <div class="calbox">
+    <h3>L'agenda parisien</h3>
+    <p>Un calendrier tenu à la main des événements IA, tech et sécurité de l'IA à Paris, au-delà des nôtres. Parce que la scène est plus vivante qu'elle n'en a l'air, il suffit de savoir où regarder.</p>
+    <p style="margin-top:18px"><a href="#" class="btn">Voir le calendrier</a></p>
+    <p style="margin-top:14px;font-size:.82rem;color:var(--light-coral)">(alimenté par le scraper d'événements, à connecter)</p>
+  </div>
+</div></section>
+
+<section id="ressources" class="band-rose"><div class="wrap">
+  <h2 class="section-title">Pour commencer</h2>
+  <p class="section-sub">Where to actually start, if this got you curious.</p>
+  <div class="grid3">
+    <a class="res" href="https://cesia.org" target="_blank" rel="noopener"><h3>CeSIA</h3><p>Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.</p><span class="go">cesia.org →</span></a>
+    <a class="res" href="https://www.ml4good.org" target="_blank" rel="noopener"><h3>ML4Good</h3><p>Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.</p><span class="go">ml4good.org →</span></a>
+    <a class="res" href="https://bluedot.org" target="_blank" rel="noopener"><h3>BlueDot Impact</h3><p>Des cours en ligne guidés, de l'introduction aux parcours techniques et gouvernance.</p><span class="go">bluedot.org →</span></a>
+    <a class="res" href="https://80000hours.org" target="_blank" rel="noopener"><h3>80,000 Hours</h3><p>Comment orienter sa carrière pour avoir le plus d'impact, avec un gros volet sécurité de l'IA.</p><span class="go">80000hours.org →</span></a>
+    <a class="res" href="https://www.apartresearch.com" target="_blank" rel="noopener"><h3>Apart Research</h3><p>Des sprints de recherche en week-end, un bon premier projet concret.</p><span class="go">apartresearch.com →</span></a>
+    <a class="res" href="https://pauseai.info" target="_blank" rel="noopener"><h3>PauseAI</h3><p>Le versant plaidoyer et mobilisation, en France et à l'international.</p><span class="go">pauseai.info →</span></a>
+    <a class="res" href="https://www.youtube.com/@LeFuturologue" target="_blank" rel="noopener"><h3>Le Futurologue</h3><p>Interviews et débats en français sur les enjeux de l'IA, par Shaïman Thürler.</p><span class="go">youtube · Le Futurologue →</span></a>
+    <a class="res" href="https://www.altruismeefficacefrance.org" target="_blank" rel="noopener"><h3>Altruisme Efficace France</h3><p>La communauté française qui cherche à faire le plus de bien possible, IA comprise.</p><span class="go">altruismeefficacefrance.org →</span></a>
+    <a class="res" href="https://www.youtube.com/@Science4All" target="_blank" rel="noopener"><h3>Science4All</h3><p>Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.</p><span class="go">youtube · Science4All →</span></a>
+  </div>
+</div></section>
+
+<section id="lettre"><div class="wrap">
+  <div class="lettre">
+    <h2>Recevez les nouvelles</h2>
+    <p>Une lettre hebdomadaire : le point sur la sécurité de l'IA, plus les dates des prochains dîners. Une fois par semaine, rien de plus.</p>
+    <form class="signup" onsubmit="return false;">
+      <input type="email" placeholder="ton adresse email" required>
+      <button type="submit" class="btn">Je m'abonne</button>
+    </form>
+    <small>Liste ouverte, sans pistage. (Formulaire à connecter à la liste.)</small>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span class="brand">Nouvelle Machine</span>
+  <p>Paris · aussi sur <a href="https://cityaligned.com" target="_blank" rel="noopener">City Aligned</a> · <a href="https://cal.com/saintgull/call">me contacter</a></p>
+  <div class="socials">
+    <a href="https://twitter.com/nouvellemachine" target="_blank" rel="noopener">Twitter</a>
+    <a href="https://instagram.com/nouvellemachine" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/erinsaintgull/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></footer>
+
+</body>
+</html>
