@@ -19,101 +19,269 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-weight:300;overflow-x:hidden}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .wrap-narrow{max-width:720px;margin:0 auto;padding:0 24px}
+  @media(max-width:640px){.wrap{padding:0 20px}}
   a{color:var(--medium-blue);text-decoration:none}
   a:hover{text-decoration:underline}
   h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}
+  .kicker{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:500;margin-bottom:20px}
 
-  .hero{padding:104px 0 64px;text-align:center;background:var(--paper)}
-  .kicker{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:500;margin-bottom:18px}
-  .hero h1{font-size:clamp(3rem,9vw,6rem);color:var(--medium-blue)}
-  .badge{display:inline-block;margin-top:18px;background:var(--cotton-rose);color:var(--magenta-bloom);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
-  .hero p.lead{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:600px;margin:24px auto 4px}
-  .hero p.en{color:var(--light-coral);font-style:italic;font-family:var(--serif);font-size:1.15rem}
-  .cta-row{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .btn{display:inline-block;background:var(--medium-blue);color:#fff;font-weight:500;font-size:.95rem;padding:11px 24px;border-radius:0;border:1.5px solid var(--medium-blue);transition:background .15s}
+  /* screens */
+  .screen{display:none}
+  .screen.active{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* buttons */
+  .cta-row{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;font-family:var(--sans);cursor:pointer;background:var(--medium-blue);color:#fff;font-weight:500;font-size:1rem;padding:13px 28px;border-radius:0;border:1.5px solid var(--medium-blue);transition:background .15s}
   .btn:hover{text-decoration:none;background:#0500a3}
   .btn.ghost{background:transparent;color:var(--medium-blue);border-color:var(--light-blue)}
   .btn.ghost:hover{background:var(--light-blue-wash);color:var(--medium-blue)}
-  .herolinks{margin-top:20px;font-size:.9rem;letter-spacing:.02em}
-  .herolinks a{color:var(--magenta-bloom);font-weight:500}
 
-  .featured{padding:8px 0 8px}
-  a.feat{display:block;max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--light-blue);border-radius:0;padding:28px 30px;transition:background .15s;color:var(--ink)}
-  a.feat:hover{background:var(--light-blue-wash);text-decoration:none}
-  .feat-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:600}
-  a.feat h2{font-size:clamp(1.4rem,3vw,1.9rem);color:var(--medium-blue);margin:10px 0 10px}
-  a.feat p{font-size:1rem;color:var(--ink);opacity:.85}
-  a.feat .go{color:var(--magenta-bloom);font-size:.85rem;font-weight:500;margin-top:14px;display:inline-block}
-  .section-lead{max-width:600px;margin:0 auto 34px;text-align:center;font-size:1rem;color:var(--ink);opacity:.8}
+  /* gate + explain */
+  .centerscreen{min-height:82vh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:60px 0}
+  #gate h1{font-size:clamp(2.1rem,5vw,3.6rem);color:var(--medium-blue);max-width:16ch;margin:0 auto}
+  #explain h2{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--medium-blue);margin-bottom:26px}
+  #explain p{font-size:clamp(1.1rem,2.2vw,1.35rem);max-width:620px;margin:0 auto 18px;color:var(--ink)}
+  #explain .cta-row{margin-top:34px}
 
-  section{padding:24px 0 72px}
-  .section-title{font-size:clamp(1.7rem,4vw,2.4rem);text-align:center;margin-bottom:6px;font-family:var(--serif);color:var(--ink)}
-  .section-sub{color:var(--light-coral);font-family:var(--serif);font-size:1.15rem;text-align:center;margin-bottom:36px}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:720px){.grid3{grid-template-columns:1fr}}
-  a.res{display:block;background:#fff;border-radius:0;padding:22px;border:1px solid var(--light-blue);transition:background .15s;color:var(--ink)}
+  /* language flag toggle */
+  .lang{position:fixed;top:18px;right:20px;z-index:50;display:flex;align-items:center;gap:8px;background:var(--paper);border:1.5px solid var(--light-blue);padding:6px 10px;cursor:pointer;font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.08em;color:var(--medium-blue)}
+  .lang:hover{background:var(--light-blue-wash)}
+  .lang .flag{width:26px;height:17px;display:inline-block;flex:0 0 auto}
+  .lang .flag span{display:block;height:100%;width:33.34%;float:left}
+
+  /* main hero */
+  .site-hero{padding:74px 0 30px;text-align:center}
+  .site-hero h1{font-size:clamp(2.6rem,7vw,5rem);color:var(--medium-blue)}
+  .site-hero .tagline{font-size:clamp(1.05rem,2vw,1.3rem);max-width:640px;margin:22px auto 0}
+
+  /* two column: event | article */
+  .two-col{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;padding:26px 0 40px;align-items:start}
+  @media(max-width:860px){.two-col{grid-template-columns:1fr}}
+  .card{display:block;background:#fff;border:1px solid var(--light-blue);border-radius:0;transition:background .15s;color:var(--ink)}
+  a.card:hover{background:var(--light-blue-wash);text-decoration:none}
+  .card-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:600;display:block;margin-bottom:12px}
+
+  .col-event .card{padding:34px 34px 30px;height:100%}
+  .event-title{font-size:clamp(2rem,4vw,2.8rem);color:var(--medium-blue);margin-bottom:16px}
+  .event-meta{font-size:1.05rem;font-weight:400;margin-bottom:4px}
+  .event-meta .ico{color:var(--magenta-bloom);margin-right:8px}
+  .event-desc{font-size:1rem;color:var(--ink);opacity:.85;margin:16px 0 22px;max-width:46ch}
+
+  .col-article .card{padding:30px}
+  .article-title{font-size:clamp(1.35rem,2.4vw,1.75rem);color:var(--medium-blue);margin-bottom:12px}
+  .article-dek{font-size:.98rem;color:var(--ink);opacity:.85}
+  .article-note{font-size:.8rem;color:var(--light-coral);font-style:italic;font-family:var(--serif);margin-top:10px;display:none}
+  html[lang="en"] .article-note{display:block}
+  .go{color:var(--magenta-bloom);font-size:.85rem;font-weight:500;margin-top:16px;display:inline-block}
+
+  /* resources */
+  .resources{padding:20px 0 64px}
+  .section-title{font-size:clamp(1.7rem,4vw,2.4rem);text-align:center;margin-bottom:8px;color:var(--ink)}
+  .section-lead{max-width:620px;margin:0 auto 34px;text-align:center;font-size:1rem;color:var(--ink);opacity:.8}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  a.res{padding:22px;border:1px solid var(--light-blue);background:#fff;transition:background .15s;color:var(--ink)}
   a.res:hover{background:var(--light-blue-wash);text-decoration:none}
   .res h3{font-size:1.3rem;color:var(--medium-blue);margin-bottom:6px}
   .res p{font-size:.9rem}
-  .res .go{color:var(--magenta-bloom);font-size:.82rem;font-weight:500;margin-top:10px;display:inline-block}
+  .res .go{font-size:.82rem;margin-top:10px}
 
-  footer{padding:44px 0;text-align:center;border-top:1px solid var(--cotton-rose);font-size:.9rem}
+  /* footer */
+  footer{padding:44px 0;text-align:center;border-top:1px solid var(--light-blue);font-size:.9rem;margin-top:10px}
   footer .brand{font-family:var(--serif);color:var(--medium-blue);font-size:1.4rem;display:block;margin-bottom:8px}
   footer .socials{display:flex;gap:20px;justify-content:center;margin-top:10px;flex-wrap:wrap}
 </style>
 </head>
 <body>
 
-<header class="hero"><div class="wrap">
-  <p class="kicker">Paris · bilingue FR / EN</p>
-  <h1>Nouvelle Machine</h1>
-  <p class="lead">Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité : des écrits, des rencontres, et des dîners hebdomadaires à Paris.</p>
-  <p class="en">A newsletter and a community thinking about AI and its safety, from Paris.</p>
-  <p class="cta-row">
-    <a class="btn" href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">S'abonner</a>
-    <a class="btn ghost" href="https://luma.com/nouvellemachine" target="_blank" rel="noopener">Venir à un dîner</a>
-  </p>
-  <p class="herolinks"><a href="/faire-de-la-surete-de-lia-une-cause">Dernier article</a> · <a href="/about">À propos</a></p>
-</div></header>
+<button class="lang" id="langBtn" onclick="toggleLang()" aria-label="Switch language">
+  <span class="flag" aria-hidden="true"><span style="background:#0700cc"></span><span style="background:#7cdedc"></span><span style="background:#e0486b"></span></span>
+  <span id="langLabel">EN</span>
+</button>
 
-<section class="featured"><div class="wrap">
-  <a class="feat" href="/faire-de-la-surete-de-lia-une-cause">
-    <span class="feat-label">Dernier article</span>
-    <h2>Faire de la sûreté de l'IA une cause grand public au même titre que le climat, par l'éducation</h2>
-    <p>Le grand public est déjà inquiet face à l'IA, mais il n'a aucun cadre pour comprendre ses intuitions ni aucun moyen concret de passer à l'action.</p>
-    <span class="go">Lire l'article →</span>
-  </a>
-</div></section>
-
-<section><div class="wrap">
-  <h2 class="section-title">Pour commencer</h2>
-  <p class="section-sub">Where to actually start.</p>
-  <p class="section-lead">Envie de comprendre l'IA et sa sûreté, ou de vous y impliquer ? Voici une sélection de bons points de départ.</p>
-  <div class="grid3">
-    <a class="res" href="https://cesia.org" target="_blank" rel="noopener"><h3>CeSIA</h3><p>Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.</p><span class="go">cesia.org →</span></a>
-    <a class="res" href="https://ml4good.org" target="_blank" rel="noopener"><h3>ML4Good</h3><p>Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.</p><span class="go">ml4good.org →</span></a>
-    <a class="res" href="https://bluedot.org" target="_blank" rel="noopener"><h3>BlueDot Impact</h3><p>Des cours en ligne guidés, de l'introduction aux parcours techniques et gouvernance.</p><span class="go">bluedot.org →</span></a>
-    <a class="res" href="https://80000hours.org" target="_blank" rel="noopener"><h3>80,000 Hours</h3><p>Comment orienter sa carrière pour avoir le plus d'impact, avec un gros volet sécurité de l'IA.</p><span class="go">80000hours.org →</span></a>
-    <a class="res" href="https://apartresearch.com" target="_blank" rel="noopener"><h3>Apart Research</h3><p>Des sprints de recherche en week-end, un bon premier projet concret.</p><span class="go">apartresearch.com →</span></a>
-    <a class="res" href="https://pauseai.info" target="_blank" rel="noopener"><h3>PauseAI</h3><p>Le versant plaidoyer et mobilisation, en France et à l'international.</p><span class="go">pauseai.info →</span></a>
-    <a class="res" href="https://www.youtube.com/@LeFuturologue" target="_blank" rel="noopener"><h3>Le Futurologue</h3><p>Interviews et débats en français sur les enjeux de l'IA, par Shaïman Thürler.</p><span class="go">youtube · Le Futurologue →</span></a>
-    <a class="res" href="https://www.altruismeefficacefrance.org" target="_blank" rel="noopener"><h3>Altruisme Efficace France</h3><p>La communauté française qui cherche à faire le plus de bien possible, IA comprise.</p><span class="go">altruismeefficacefrance.org →</span></a>
-    <a class="res" href="https://www.youtube.com/@Science4All" target="_blank" rel="noopener"><h3>Science4All</h3><p>Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.</p><span class="go">youtube · Science4All →</span></a>
+<!-- SCREEN 1 — GATE -->
+<section id="gate" class="screen active"><div class="wrap-narrow centerscreen">
+  <p class="kicker" data-i18n="kicker">Paris · sûreté de l'IA</p>
+  <h1 data-i18n="gate_h">Inquiet·e que l'IA nous fasse du mal ? Vous ne savez pas par où commencer ?</h1>
+  <div class="cta-row">
+    <button class="btn" onclick="show('explain')" data-i18n="gate_yes">Oui, aidez-moi</button>
+    <button class="btn ghost" onclick="show('main')" data-i18n="gate_site">Emmenez-moi sur le site</button>
   </div>
 </div></section>
 
-<footer><div class="wrap">
-  <span class="brand">Nouvelle Machine</span>
-  <p>Paris · aussi sur <a href="https://cityaligned.com" target="_blank" rel="noopener">City Aligned</a> · <a href="https://cal.com/saintgull/call">me contacter</a></p>
-  <div class="socials">
-    <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Substack</a>
-    <a href="https://www.instagram.com/nouvellemachine" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.tiktok.com/@nouvellemachine" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://twitter.com/nouvellemachine" target="_blank" rel="noopener">Twitter</a>
-    <a href="https://www.linkedin.com/in/erinsaintgull/" target="_blank" rel="noopener">LinkedIn</a>
+<!-- SCREEN 2 — EXPLAIN -->
+<section id="explain" class="screen"><div class="wrap-narrow centerscreen">
+  <h2 data-i18n="explain_h">La sûreté de l'IA, en deux phrases</h2>
+  <p data-i18n="explain_1">La sûreté de l'IA, c'est le travail qui vise à garantir que des systèmes d'intelligence artificielle de plus en plus puissants restent sous contrôle humain et agissent dans notre intérêt.</p>
+  <p data-i18n="explain_2">Rien de science-fiction : un champ de recherche et d'action bien réel, où chercheurs, ingénieurs et citoyens tentent d'éviter que cette technologie ne cause des dommages graves, voire irréversibles.</p>
+  <div class="cta-row">
+    <button class="btn" onclick="show('main')" data-i18n="explain_more">Je veux en savoir plus</button>
   </div>
-</div></footer>
+</div></section>
+
+<!-- SCREEN 3 — MAIN -->
+<section id="main" class="screen">
+  <header class="site-hero"><div class="wrap">
+    <h1>Nouvelle Machine</h1>
+    <p class="tagline" data-i18n="tagline">Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité : des écrits, des rencontres, et des dîners hebdomadaires à Paris.</p>
+  </div></header>
+
+  <div class="wrap"><div class="two-col">
+    <!-- next event -->
+    <div class="col-event">
+      <a class="card" href="https://luma.com/nouvellemachine" target="_blank" rel="noopener">
+        <span class="card-label" data-i18n="event_label">Prochain événement</span>
+        <h2 class="event-title">Dîner Machine</h2>
+        <p class="event-meta"><span class="ico">◆</span><span data-i18n="event_date">dimanche 5 octobre · 19h</span></p>
+        <p class="event-meta"><span class="ico">◆</span>Restaurant Godjo · Paris 5<sup>e</sup></p>
+        <p class="event-desc" data-i18n="event_desc">Nos dîners hebdomadaires et décontractés sur la sûreté de l'IA. Ouverts à tous, sans prérequis.</p>
+        <span class="go" data-i18n="event_cta">Réserver sur Luma →</span>
+      </a>
+    </div>
+    <!-- recent article -->
+    <div class="col-article">
+      <a class="card" href="/faire-de-la-surete-de-lia-une-cause">
+        <span class="card-label" data-i18n="article_label">Dernier article</span>
+        <h2 class="article-title" data-i18n="article_title">Faire de la sûreté de l'IA une cause grand public au même titre que le climat, par l'éducation</h2>
+        <p class="article-dek" data-i18n="article_dek">Le grand public est déjà inquiet face à l'IA, mais il n'a aucun cadre pour comprendre ses intuitions ni aucun moyen concret de passer à l'action.</p>
+        <p class="article-note" data-i18n="article_note">Article en français.</p>
+        <span class="go" data-i18n="article_cta">Lire l'article →</span>
+      </a>
+    </div>
+  </div></div>
+
+  <section class="resources"><div class="wrap">
+    <h2 class="section-title" data-i18n="res_title">Pour commencer</h2>
+    <p class="section-lead" data-i18n="res_lead">Envie de comprendre l'IA et sa sûreté, ou de vous impliquer ? Voici une sélection de bons points de départ.</p>
+    <div class="grid">
+      <a class="res" href="https://cesia.org" target="_blank" rel="noopener"><h3>CeSIA</h3><p data-i18n="res_cesia">Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.</p><span class="go">cesia.org →</span></a>
+      <a class="res" href="https://ml4good.org" target="_blank" rel="noopener"><h3>ML4Good</h3><p data-i18n="res_ml4good">Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.</p><span class="go">ml4good.org →</span></a>
+      <a class="res" href="https://bluedot.org" target="_blank" rel="noopener"><h3>BlueDot Impact</h3><p data-i18n="res_bluedot">Des cours en ligne guidés, de l'introduction aux parcours techniques et gouvernance.</p><span class="go">bluedot.org →</span></a>
+      <a class="res" href="https://80000hours.org" target="_blank" rel="noopener"><h3>80,000 Hours</h3><p data-i18n="res_80k">Comment orienter sa carrière pour avoir le plus d'impact, avec un gros volet sécurité de l'IA.</p><span class="go">80000hours.org →</span></a>
+      <a class="res" href="https://apartresearch.com" target="_blank" rel="noopener"><h3>Apart Research</h3><p data-i18n="res_apart">Des sprints de recherche en week-end, un bon premier projet concret.</p><span class="go">apartresearch.com →</span></a>
+      <a class="res" href="https://pauseai.info" target="_blank" rel="noopener"><h3>PauseAI</h3><p data-i18n="res_pauseai">Le versant plaidoyer et mobilisation, en France et à l'international.</p><span class="go">pauseai.info →</span></a>
+      <a class="res" href="https://www.youtube.com/@LeFuturologue" target="_blank" rel="noopener"><h3>Le Futurologue</h3><p data-i18n="res_futuro">Interviews et débats en français sur les enjeux de l'IA, par Shaïman Thürler.</p><span class="go">youtube · Le Futurologue →</span></a>
+      <a class="res" href="https://www.altruismeefficacefrance.org" target="_blank" rel="noopener"><h3>Altruisme Efficace France</h3><p data-i18n="res_aef">La communauté française qui cherche à faire le plus de bien possible, IA comprise.</p><span class="go">altruismeefficacefrance.org →</span></a>
+      <a class="res" href="https://www.youtube.com/@Science4All" target="_blank" rel="noopener"><h3>Science4All</h3><p data-i18n="res_s4a">Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.</p><span class="go">youtube · Science4All →</span></a>
+    </div>
+  </div></section>
+
+  <footer><div class="wrap">
+    <span class="brand">Nouvelle Machine</span>
+    <p data-i18n="footer_line">Paris · aussi sur <a href="https://cityaligned.com" target="_blank" rel="noopener">City Aligned</a> · <a href="https://cal.com/saintgull/call">me contacter</a></p>
+    <div class="socials">
+      <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="https://www.instagram.com/nouvellemachine" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@nouvellemachine" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://twitter.com/nouvellemachine" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://www.linkedin.com/in/erinsaintgull/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div></footer>
+</section>
+
+<script>
+  var I18N = {
+    fr: {
+      kicker: "Paris · sûreté de l'IA",
+      gate_h: "Inquiet·e que l'IA nous fasse du mal ? Vous ne savez pas par où commencer ?",
+      gate_yes: "Oui, aidez-moi",
+      gate_site: "Emmenez-moi sur le site",
+      explain_h: "La sûreté de l'IA, en deux phrases",
+      explain_1: "La sûreté de l'IA, c'est le travail qui vise à garantir que des systèmes d'intelligence artificielle de plus en plus puissants restent sous contrôle humain et agissent dans notre intérêt.",
+      explain_2: "Rien de science-fiction : un champ de recherche et d'action bien réel, où chercheurs, ingénieurs et citoyens tentent d'éviter que cette technologie ne cause des dommages graves, voire irréversibles.",
+      explain_more: "Je veux en savoir plus",
+      tagline: "Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité : des écrits, des rencontres, et des dîners hebdomadaires à Paris.",
+      event_label: "Prochain événement",
+      event_date: "dimanche 5 octobre · 19h",
+      event_desc: "Nos dîners hebdomadaires et décontractés sur la sûreté de l'IA. Ouverts à tous, sans prérequis.",
+      event_cta: "Réserver sur Luma →",
+      article_label: "Dernier article",
+      article_title: "Faire de la sûreté de l'IA une cause grand public au même titre que le climat, par l'éducation",
+      article_dek: "Le grand public est déjà inquiet face à l'IA, mais il n'a aucun cadre pour comprendre ses intuitions ni aucun moyen concret de passer à l'action.",
+      article_note: "Article en français.",
+      article_cta: "Lire l'article →",
+      res_title: "Pour commencer",
+      res_lead: "Envie de comprendre l'IA et sa sûreté, ou de vous impliquer ? Voici une sélection de bons points de départ.",
+      res_cesia: "Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.",
+      res_ml4good: "Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.",
+      res_bluedot: "Des cours en ligne guidés, de l'introduction aux parcours techniques et gouvernance.",
+      res_80k: "Comment orienter sa carrière pour avoir le plus d'impact, avec un gros volet sécurité de l'IA.",
+      res_apart: "Des sprints de recherche en week-end, un bon premier projet concret.",
+      res_pauseai: "Le versant plaidoyer et mobilisation, en France et à l'international.",
+      res_futuro: "Interviews et débats en français sur les enjeux de l'IA, par Shaïman Thürler.",
+      res_aef: "La communauté française qui cherche à faire le plus de bien possible, IA comprise.",
+      res_s4a: "Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.",
+      footer_line: 'Paris · aussi sur <a href="https://cityaligned.com" target="_blank" rel="noopener">City Aligned</a> · <a href="https://cal.com/saintgull/call">me contacter</a>'
+    },
+    en: {
+      kicker: "Paris · AI safety",
+      gate_h: "Worried that AI could harm us? Not sure where to start?",
+      gate_yes: "Yes, help me",
+      gate_site: "Take me to the site",
+      explain_h: "AI safety, in two sentences",
+      explain_1: "AI safety is the work of making sure that increasingly powerful artificial-intelligence systems stay under human control and act in our interest.",
+      explain_2: "Not science fiction: a real field of research and action, where researchers, engineers and citizens try to keep this technology from causing serious, even irreversible, harm.",
+      explain_more: "I want to learn more",
+      tagline: "A newsletter and a community for thinking about AI and its safety: writing, gatherings, and weekly dinners in Paris.",
+      event_label: "Next event",
+      event_date: "Sunday 5 October · 7pm",
+      event_desc: "Our casual weekly dinners on AI safety. Open to everyone, no prerequisites.",
+      event_cta: "RSVP on Luma →",
+      article_label: "Latest article",
+      article_title: "Making AI safety a mainstream cause, like the climate, through education",
+      article_dek: "The public is already worried about AI, but has no framework to make sense of those worries and no concrete way to act.",
+      article_note: "Article in French.",
+      article_cta: "Read the article →",
+      res_title: "Where to start",
+      res_lead: "Want to understand AI and its safety, or get involved? Here's a hand-picked set of good starting points.",
+      res_cesia: "France's centre for AI safety, in Paris. Research, training and a French-speaking community.",
+      res_ml4good: "Free, intensive bootcamps to get hands-on with AI safety.",
+      res_bluedot: "Guided online courses, from intro to technical and governance tracks.",
+      res_80k: "How to steer your career for the most impact, with a big AI-safety focus.",
+      res_apart: "Weekend research sprints, a great first concrete project.",
+      res_pauseai: "The advocacy and grassroots side, in France and worldwide.",
+      res_futuro: "Interviews and debates in French on what's at stake with AI, by Shaïman Thürler.",
+      res_aef: "The French community trying to do the most good possible, AI included.",
+      res_s4a: "Lê Nguyên Hoang breaks down AI safety, maths and the ethics of algorithms.",
+      footer_line: 'Paris · also on <a href="https://cityaligned.com" target="_blank" rel="noopener">City Aligned</a> · <a href="https://cal.com/saintgull/call">get in touch</a>'
+    }
+  };
+  var HTML_KEYS = { footer_line: true };
+
+  function show(id){
+    var s = document.querySelectorAll('.screen');
+    for(var i=0;i<s.length;i++) s[i].classList.remove('active');
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+  }
+  function applyLang(l){
+    var dict = I18N[l] || I18N.fr;
+    document.documentElement.lang = l;
+    var nodes = document.querySelectorAll('[data-i18n]');
+    for(var i=0;i<nodes.length;i++){
+      var k = nodes[i].getAttribute('data-i18n');
+      if(dict[k] != null){
+        if(HTML_KEYS[k]) nodes[i].innerHTML = dict[k];
+        else nodes[i].textContent = dict[k];
+      }
+    }
+    document.getElementById('langLabel').textContent = (l === 'fr') ? 'EN' : 'FR';
+    try{ localStorage.setItem('nm_lang', l); }catch(e){}
+  }
+  function toggleLang(){
+    var cur = document.documentElement.lang === 'en' ? 'en' : 'fr';
+    applyLang(cur === 'fr' ? 'en' : 'fr');
+  }
+  (function(){
+    var saved = 'fr';
+    try{ saved = localStorage.getItem('nm_lang') || 'fr'; }catch(e){}
+    applyLang(saved);
+  })();
+</script>
 
 </body>
 </html>
