@@ -54,7 +54,8 @@
 
   .two-col{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;padding:26px 0 40px;align-items:stretch}
   @media(max-width:860px){.two-col{grid-template-columns:1fr}}
-  a.card{display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--light-blue);border-radius:0;transition:background .15s;color:var(--ink)}
+  a.card{display:flex;flex-direction:column;height:100%;min-height:400px;background:#fff;border:1px solid var(--light-blue);border-radius:0;transition:background .15s;color:var(--ink)}
+  @media(max-width:860px){a.card{min-height:0}}
   a.card:hover{background:var(--light-blue-wash);text-decoration:none}
   .card-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:600;display:block;margin-bottom:12px}
 
@@ -95,9 +96,18 @@
   <svg class="flag" id="flagFR" viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true" style="display:none">
     <rect width="1" height="2" x="0" fill="#0700cc"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#e0486b"/>
   </svg>
-  <!-- English flag (St George cross: white field, pink cross) -->
-  <svg class="flag" id="flagEN" viewBox="0 0 30 20" preserveAspectRatio="none" aria-hidden="true" style="display:none">
-    <rect width="30" height="20" fill="#ffffff"/><rect x="12" width="6" height="20" fill="#e0486b"/><rect y="7" width="30" height="6" fill="#e0486b"/>
+  <!-- UK flag (Union Jack) in site colours: blue field, white + pink saltires and cross -->
+  <svg class="flag" id="flagEN" viewBox="0 0 60 30" preserveAspectRatio="none" aria-hidden="true" style="display:none">
+    <clipPath id="ukclip"><rect width="60" height="30"/></clipPath>
+    <g clip-path="url(#ukclip)">
+      <rect width="60" height="30" fill="#0700cc"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#ffffff" stroke-width="6"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#e0486b" stroke-width="2"/>
+      <rect x="25" width="10" height="30" fill="#ffffff"/>
+      <rect y="10" width="60" height="10" fill="#ffffff"/>
+      <rect x="27" width="6" height="30" fill="#e0486b"/>
+      <rect y="12" width="60" height="6" fill="#e0486b"/>
+    </g>
   </svg>
   <span id="langLabel">EN</span>
 </button>
@@ -173,7 +183,6 @@
       <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Substack</a>
       <a href="https://www.instagram.com/nouvellemachine" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@nouvellemachine" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://twitter.com/nouvellemachine" target="_blank" rel="noopener">Twitter</a>
       <a href="https://www.linkedin.com/in/erinsaintgull/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div></footer>
