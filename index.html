@@ -57,20 +57,34 @@
   a.card{display:flex;flex-direction:column;height:100%;min-height:400px;background:#fff;border:1px solid var(--light-blue);border-radius:0;transition:background .15s;color:var(--ink)}
   @media(max-width:860px){a.card{min-height:0}}
   a.card:hover{background:var(--light-blue-wash);text-decoration:none}
-  .card-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:600;display:block;margin-bottom:12px}
+  .card-headline{font-family:var(--serif);font-weight:400;line-height:1.02;color:var(--medium-blue);margin-bottom:14px}
 
   .col-event a.card{padding:34px 34px 30px}
-  .event-title{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--medium-blue);margin-bottom:16px}
-  .event-meta{font-size:1.05rem;font-weight:400;margin-bottom:4px}
+  .col-event .card-headline{font-size:clamp(2rem,3.8vw,2.8rem)}
+  .event-name{font-size:1.18rem;font-weight:500;color:var(--ink);margin-bottom:18px;line-height:1.28}
+  .event-meta{font-size:1.02rem;font-weight:400;margin-bottom:4px}
   .event-meta .ico{color:var(--magenta-bloom);margin-right:8px}
-  .event-desc{font-size:1rem;color:var(--ink);opacity:.85;margin:16px 0 22px;max-width:46ch}
+  .event-desc{font-size:1rem;color:var(--ink);opacity:.82;margin:16px 0 22px;max-width:46ch}
   .col-event .go{margin-top:auto}
 
   .col-article a.card{padding:30px}
-  .article-title{font-size:clamp(1.35rem,2.4vw,1.75rem);color:var(--medium-blue);margin-bottom:12px}
-  .article-dek{font-size:.98rem;color:var(--ink);opacity:.85}
+  .col-article .card-headline{font-size:clamp(1.7rem,3vw,2.3rem)}
+  .article-name{font-size:1.08rem;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.32}
+  .article-dek{font-size:.95rem;color:var(--ink);opacity:.8}
   .col-article .go{margin-top:auto}
   .go{color:var(--magenta-bloom);font-size:.85rem;font-weight:500;padding-top:16px;display:inline-block}
+
+  /* newsletter signup */
+  .signup{padding:6px 0 66px;text-align:center}
+  .signup h2{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--ink);margin-bottom:8px}
+  .signup .sub{color:var(--ink);opacity:.82;margin-bottom:24px;font-size:1.02rem}
+  .signup form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto}
+  .signup input[type=email]{flex:1 1 240px;padding:12px 14px;border:1.5px solid var(--light-blue);border-radius:0;font-family:var(--sans);font-size:1rem;color:var(--ink);background:#fff}
+  .signup input[type=email]:focus{outline:none;border-color:var(--medium-blue)}
+  .signup .btn{flex:0 0 auto;cursor:pointer}
+  .signup .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .signup-note{font-size:.85rem;color:var(--light-coral);font-style:italic;font-family:var(--serif);margin-top:16px}
+  .signup-ok{font-size:1.1rem;color:var(--medium-blue);font-family:var(--serif)}
 
   .resources{padding:20px 0 64px}
   .section-title{font-size:clamp(1.7rem,4vw,2.4rem);text-align:center;margin-bottom:8px;color:var(--ink)}
@@ -142,9 +156,9 @@
   <div class="wrap"><div class="two-col">
     <div class="col-event">
       <a class="card" id="eventLink" href="https://luma.com/nouvellemachine" target="_blank" rel="noopener">
-        <span class="card-label" data-i18n="event_label">Prochain événement</span>
-        <h2 class="event-title" id="eventTitle">Dîner Machine</h2>
-        <p class="event-meta"><span class="ico">◆</span><span id="eventDate">dimanche 5 octobre · 19:00</span></p>
+        <h2 class="card-headline" data-i18n="event_label">Prochain événement</h2>
+        <p class="event-name" id="eventTitle">Dîner Machine</p>
+        <p class="event-meta"><span class="ico">◆</span><span id="eventDate">lundi 5 octobre · 19:00</span></p>
         <p class="event-meta"><span class="ico">◆</span><span id="eventVenue">Restaurant Godjo · Paris</span></p>
         <p class="event-desc" data-i18n="event_desc">Nos dîners hebdomadaires et décontractés sur la sûreté de l'IA. Ouverts à tous, sans prérequis.</p>
         <span class="go" data-i18n="event_cta">Réserver sur Luma →</span>
@@ -152,8 +166,8 @@
     </div>
     <div class="col-article">
       <a class="card" id="articleLink" href="/faire-de-la-surete-de-lia-une-cause">
-        <span class="card-label" data-i18n="article_label">Dernier article</span>
-        <h2 class="article-title" data-i18n="article_title">Faire de la sûreté de l'IA une cause grand public au même titre que le climat, par l'éducation</h2>
+        <h2 class="card-headline" data-i18n="article_label">Dernier article</h2>
+        <p class="article-name" data-i18n="article_title">Faire de la sûreté de l'IA une cause grand public au même titre que le climat, par l'éducation</p>
         <p class="article-dek" data-i18n="article_dek">Le grand public est déjà inquiet face à l'IA, mais il n'a aucun cadre pour comprendre ses intuitions ni aucun moyen concret de passer à l'action.</p>
         <span class="go" data-i18n="article_cta">Lire l'article →</span>
       </a>
@@ -174,6 +188,21 @@
       <a class="res" href="https://www.altruismeefficacefrance.org" target="_blank" rel="noopener"><h3>Altruisme Efficace France</h3><p data-i18n="res_aef">La communauté française qui cherche à faire le plus de bien possible, IA comprise.</p><span class="go">altruismeefficacefrance.org →</span></a>
       <a class="res" href="https://www.youtube.com/@Science4All" target="_blank" rel="noopener"><h3>Science4All</h3><p data-i18n="res_s4a">Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.</p><span class="go">youtube · Science4All →</span></a>
     </div>
+  </div></section>
+
+  <section class="signup"><div class="wrap-narrow">
+    <h2 data-i18n="signup_h">Restons en contact</h2>
+    <p class="sub" data-i18n="signup_sub">Recevez les invitations aux dîners et les nouvelles de Nouvelle Machine.</p>
+    <div id="signupBox">
+      <form name="contact-list" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitSignup(event)">
+        <input type="hidden" name="form-name" value="contact-list">
+        <p class="hp"><label>Laissez ce champ vide <input name="bot-field"></label></p>
+        <input type="email" name="email" id="signupEmail" required placeholder="votre@email.com" data-i18n-ph="signup_ph">
+        <button type="submit" class="btn" data-i18n="signup_btn">S'inscrire</button>
+      </form>
+      <p class="signup-note" data-i18n="signup_note">Une liste directe, distincte du Substack.</p>
+    </div>
+    <p class="signup-ok" id="signupOk" data-i18n="signup_ok" style="display:none">Merci ! Vous êtes sur la liste.</p>
   </div></section>
 
   <footer><div class="wrap">
@@ -220,6 +249,12 @@
       res_futuro: "Interviews et débats en français sur les enjeux de l'IA, par Shaïman Thürler.",
       res_aef: "La communauté française qui cherche à faire le plus de bien possible, IA comprise.",
       res_s4a: "Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.",
+      signup_h: "Restons en contact",
+      signup_sub: "Recevez les invitations aux dîners et les nouvelles de Nouvelle Machine.",
+      signup_btn: "S'inscrire",
+      signup_ph: "votre@email.com",
+      signup_note: "Une liste directe, distincte du Substack.",
+      signup_ok: "Merci ! Vous êtes sur la liste.",
       footer_line: 'Paris · <a href="https://cal.com/saintgull/call">me contacter</a>'
     },
     en: {
@@ -250,6 +285,12 @@
       res_futuro: "Interviews and debates in French on what's at stake with AI, by Shaïman Thürler.",
       res_aef: "The French community trying to do the most good possible, AI included.",
       res_s4a: "Lê Nguyên Hoang breaks down AI safety, maths and the ethics of algorithms.",
+      signup_h: "Let's stay in touch",
+      signup_sub: "Get dinner invites and news from Nouvelle Machine.",
+      signup_btn: "Sign up",
+      signup_ph: "you@email.com",
+      signup_note: "A direct list, separate from Substack.",
+      signup_ok: "Thanks — you're on the list.",
       footer_line: 'Paris · <a href="https://cal.com/saintgull/call">get in touch</a>'
     }
   };
@@ -294,6 +335,8 @@
         else nodes[i].textContent = dict[k];
       }
     }
+    var phs = document.querySelectorAll('[data-i18n-ph]');
+    for(var j=0;j<phs.length;j++){ var pk = phs[j].getAttribute('data-i18n-ph'); if(dict[pk] != null) phs[j].placeholder = dict[pk]; }
     document.getElementById('articleLink').href = (l === 'en') ? ART_EN : ART_FR;
     // flag = the language you'll switch TO
     document.getElementById('flagEN').style.display = (l === 'fr') ? 'block' : 'none';
@@ -307,6 +350,22 @@
     applyLang(cur === 'fr' ? 'en' : 'fr');
   }
   function curLang(){ return document.documentElement.lang === 'en' ? 'en' : 'fr'; }
+
+  function encodeForm(o){ return Object.keys(o).map(function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(o[k]); }).join('&'); }
+  function submitSignup(e){
+    e.preventDefault();
+    var email = document.getElementById('signupEmail').value;
+    if(!email) return false;
+    var body = encodeForm({ 'form-name': 'contact-list', 'email': email });
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      .then(function(){ signupDone(); })
+      .catch(function(){ signupDone(); });
+    return false;
+  }
+  function signupDone(){
+    document.getElementById('signupBox').style.display = 'none';
+    document.getElementById('signupOk').style.display = 'block';
+  }
 
   (function(){
     var saved = 'fr';
