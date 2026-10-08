@@ -28,7 +28,13 @@
   a{color:var(--medium-blue);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
   a:hover{color:var(--magenta-bloom)}
 
-  .hero{padding:72px 0 32px;background:var(--paper)}
+  .topnav{border-bottom:1px solid var(--cotton-rose)}
+  .topnav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px}
+  .topnav .brand{font-family:var(--serif);font-size:1.15rem;color:var(--medium-blue);text-decoration:none}
+  .topnav .navlinks a{font-size:.9rem;margin-left:18px;color:var(--ink);text-decoration:none;letter-spacing:.02em}
+  .topnav .navlinks a:hover{color:var(--magenta-bloom)}
+
+  .hero{padding:52px 0 32px;background:var(--paper)}
   .backlink{display:inline-block;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta-bloom);font-weight:500;margin-bottom:22px;text-decoration:none}
   h1{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(2rem,5.4vw,3.1rem);color:var(--medium-blue)}
   .dek{font-family:var(--serif);font-style:italic;color:var(--light-coral);font-size:1.2rem;margin-top:16px;line-height:1.4}
@@ -52,8 +58,13 @@
 </head>
 <body>
 
+<nav class="topnav"><div class="wrap">
+  <a class="brand" href="/">Nouvelle Machine</a>
+  <span class="navlinks"><a href="/articles">Articles</a><a href="/communaute">Communauté</a></span>
+</div></nav>
+
 <header class="hero"><div class="wrap">
-  <a class="backlink" href="/">← Nouvelle Machine</a>
+  <a class="backlink" href="/articles">← Articles</a>
   <h1>Faire de la sûreté de l'IA une cause grand public au même titre que le climat, par l'éducation</h1>
   <p class="dek">Le grand public est déjà inquiet face à l'IA, parfois pour de bonnes raisons, mais il n'a aucun cadre pour comprendre ses intuitions ni aucun moyen concret de passer à l'action.</p>
   <p class="byline">Erin Saint Gull · 19 septembre 2026</p>
@@ -100,7 +111,7 @@
     <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Substack</a>
     <a href="https://www.instagram.com/nouvellemachine" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.tiktok.com/@nouvellemachine" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://www.linkedin.com/in/erinsaintgull/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.linkedin.com/company/nouvellemachine" target="_blank" rel="noopener">LinkedIn</a>
   </div>
   <span class="copyright">© 2026 Erin Constance</span>
 </div></footer>
