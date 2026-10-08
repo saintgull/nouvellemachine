@@ -207,6 +207,7 @@
 
   <footer><div class="wrap">
     <p data-i18n="footer_line">Paris · <a href="https://cal.com/saintgull/call">me contacter</a></p>
+    <p class="footer-feedback" data-i18n="footer_feedback">Un avis sur Nouvelle Machine ? <a href="https://www.admonymous.co/nouvellemachine" target="_blank" rel="noopener">Dites-nous tout, anonymement →</a></p>
     <div class="socials">
       <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Substack</a>
       <a href="https://www.instagram.com/nouvellemachine" target="_blank" rel="noopener">Instagram</a>
@@ -255,7 +256,8 @@
       signup_ph: "votre@email.com",
       signup_note: "Une liste directe, distincte du Substack.",
       signup_ok: "Merci ! Vous êtes sur la liste.",
-      footer_line: 'Paris · <a href="https://cal.com/saintgull/call">me contacter</a>'
+      footer_line: 'Paris · <a href="https://cal.com/saintgull/call">me contacter</a>',
+      footer_feedback: 'Un avis sur Nouvelle Machine ? <a href="https://www.admonymous.co/nouvellemachine" target="_blank" rel="noopener">Dites-nous tout, anonymement →</a>'
     },
     en: {
       kicker: "Paris · AI safety",
@@ -291,10 +293,11 @@
       signup_ph: "you@email.com",
       signup_note: "A direct list, separate from Substack.",
       signup_ok: "Thanks — you're on the list.",
-      footer_line: 'Paris · <a href="https://cal.com/saintgull/call">get in touch</a>'
+      footer_line: 'Paris · <a href="https://cal.com/saintgull/call">get in touch</a>',
+      footer_feedback: 'Thoughts on Nouvelle Machine? <a href="https://www.admonymous.co/nouvellemachine" target="_blank" rel="noopener">Tell us anything, anonymously →</a>'
     }
   };
-  var HTML_KEYS = { footer_line: true };
+  var HTML_KEYS = { footer_line: true, footer_feedback: true };
 
   function show(id){
     var s = document.querySelectorAll('.screen');
