@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Banc d'Essai · ressources</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--cobalt:#0700cc;--magenta:#e0486b;--cream:#fffdfa;--ink:#14142e;--blue:#9bb8ef;--coral:#ea8885;
+    --serif:'Instrument Serif',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;font-weight:300}
+  .wrap{max-width:700px;margin:0 auto;padding:0 22px}
+  a{color:var(--cobalt);text-decoration:underline;text-underline-offset:2px}
+  a:hover{color:var(--magenta)}
+  header{padding:48px 0 10px}
+  .kick{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--magenta);font-weight:500}
+  h1{font-family:var(--serif);font-weight:400;color:var(--cobalt);font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin-top:8px}
+  .dek{font-family:var(--serif);font-style:italic;color:var(--coral);font-size:1.15rem;margin-top:10px}
+  h2{font-family:var(--serif);font-weight:400;color:var(--cobalt);font-size:1.5rem;margin:30px 0 8px}
+  main{padding:8px 0 20px}
+  .start{background:#fff;border:1.5px solid var(--blue);padding:18px 20px;margin:16px 0}
+  .start a{font-weight:500}
+  ol,ul{margin:6px 0 6px 20px}
+  li{margin:5px 0}
+  .muted{opacity:.7;font-size:.92rem}
+  .tag{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--cobalt);padding:2px 7px;border-radius:3px;margin-right:6px;vertical-align:middle}
+  footer{padding:36px 0;text-align:center;border-top:1px solid #ffcfd2;margin-top:28px;font-size:.88rem}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="kick">Nouvelle Machine</div>
+  <h1>Banc d'Essai · ressources</h1>
+  <p class="dek">Tout ce qu'il te faut pour démarrer ton projet aujourd'hui.</p>
+</div></header>
+
+<main><div class="wrap">
+
+  <div class="start">
+    <strong>Commence ici 👇</strong>
+    <ol>
+      <li><strong>Le notebook d'éval :</strong> <a href="https://colab.research.google.com/drive/1JHoA3IUpenlmysqQllX099evIMO7mVaA?usp=sharing" id="colab" target="_blank" rel="noopener">Ouvrir le notebook d'éval (Colab)</a> (ouvre-le, puis « Enregistrer une copie dans Drive »).</li>
+      <li><strong>La clé API</strong> est sur la carte de ta table (ou déjà dans le notebook de ta table).</li>
+      <li>Choisis un projet ci-dessous, et lance-toi. On passe t'aider.</li>
+    </ol>
+  </div>
+
+  <h2>Le menu de projets</h2>
+  <ul>
+    <li><span class="tag">éval</span> Une petite éval : 10 prompts qui testent un comportement (flagornerie, refus, triche…).</li>
+    <li><span class="tag">trad</span> Traduire en français une section d'une ressource clé en sûreté de l'IA.</li>
+    <li><span class="tag">gouv</span> Une note d'une page sur une question de gouvernance de l'IA.</li>
+    <li><span class="tag">papier</span> Une réponse argumentée (réfutation ou steelman) à un papier récent.</li>
+    <li><span class="tag">jailbreak</span> Reproduire un prompt-injection / jailbreak et expliquer pourquoi ça marche.</li>
+    <li><span class="tag">données</span> Un mini-jeu « devine lequel est l'IA » (images/textes en paires).</li>
+    <li><span class="tag">libre</span> Ton idée : on t'aide à la cadrer pour tenir dans l'après-midi.</li>
+  </ul>
+
+  <h2>Ressources par piste</h2>
+  <ul>
+    <li><strong>Évals :</strong> le notebook ci-dessus · <a href="https://inspect.aisi.org.uk" target="_blank" rel="noopener">Inspect (UK AISI)</a> · <a href="https://www.neuronpedia.org" target="_blank" rel="noopener">Neuronpedia</a> (interprétabilité).</li>
+    <li><strong>Comprendre le domaine :</strong> <a href="https://aisafety.info" target="_blank" rel="noopener">aisafety.info</a> · <a href="https://aisafetyfundamentals.com" target="_blank" rel="noopener">AI Safety Fundamentals</a>.</li>
+    <li><strong>Papiers & débats :</strong> <a href="https://www.alignmentforum.org" target="_blank" rel="noopener">Alignment Forum</a> · <a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener">arXiv cs.AI</a>.</li>
+    <li><strong>Gouvernance :</strong> <a href="https://artificialintelligenceact.eu" target="_blank" rel="noopener">EU AI Act (résumé)</a>.</li>
+  </ul>
+
+  <h2>Les grands récits</h2>
+  <p class="muted">Les cadres pour parler du risque IA. Utiles pour les projets « gouv » et « papier ».</p>
+  <ul>
+    <li><strong>Perte de contrôle :</strong> des systèmes plus capables que nous cessent d'être pilotables.</li>
+    <li><strong>Désempouvoirement graduel :</strong> on délègue tout à l'IA jusqu'à n'avoir plus de prise.</li>
+    <li><strong>Course en avant :</strong> labos et États accélèrent par peur du concurrent.</li>
+    <li><strong>Concentration du pouvoir :</strong> richesse et pouvoir dans très peu de mains.</li>
+    <li><strong>Mésusage catastrophique :</strong> bio, cyber, désinformation de masse.</li>
+    <li><strong>Dommages présents :</strong> biais, emploi, surveillance, environnement. Le pont vers le grand public.</li>
+    <li><strong>Souveraineté :</strong> qui maîtrise l'IA, enjeu stratégique national.</li>
+    <li><strong>Accélérationnisme :</strong> bénéfices immenses, donc ne pas freiner. Le contre-récit.</li>
+  </ul>
+
+  <h2>Les récits sceptiques</h2>
+  <p class="muted">Les arguments qui minimisent le risque existentiel. À connaître pour le projet « papier » (steelman ou réfutation).</p>
+  <ul>
+    <li><strong>« Science-fiction » :</strong> peur spéculative, on projette une agentivité humaine sur des maths.</li>
+    <li><strong>« Perroquets stochastiques » :</strong> les LLM prédisent des tokens, aucune compréhension (Bender, Marcus).</li>
+    <li><strong>« Les vrais problèmes sont présents » :</strong> le risque X détourne des biais, de l'emploi, du pouvoir (DAIR, Accountable Tech).</li>
+    <li><strong>« Marketing des labos » :</strong> exagérer le doom sert les acteurs en place (capture réglementaire).</li>
+    <li><strong>« Technologie normale » :</strong> on s'adapte comme pour toute techno, pas de rupture (Narayanan & Kapoor).</li>
+    <li><strong>« Pas de mécanisme concret » :</strong> les arguments doom ne sont pas falsifiables.</li>
+    <li><strong>« Intelligence ≠ volonté de pouvoir » :</strong> un système intelligent ne cherchera pas à nous échapper (LeCun).</li>
+    <li><strong>« Le vrai risque, c'est de freiner » :</strong> retarder coûte des vies (Andreessen, e/acc).</li>
+  </ul>
+
+  <h2>Ressources à traduire</h2>
+  <p class="muted">Surtout des sources BlueDot. Traduis une section, pas tout.</p>
+  <ul>
+    <li>Neel Nanda, « Become a person who Actually Does Things » : court, un bon départ. <a href="https://www.neelnanda.io" target="_blank" rel="noopener">neelnanda.io</a></li>
+    <li>CAIS, « Statement on AI Risk » : une phrase, forte. <a href="https://www.safe.ai/work/statement-on-ai-risk" target="_blank" rel="noopener">safe.ai</a></li>
+    <li>Un article d'intro sur <a href="https://aisafety.info" target="_blank" rel="noopener">aisafety.info</a> : modulaire, court.</li>
+    <li>« Gradual Disempowerment » (Kulveit et al.) : résumé + intro. <a href="https://www.alignmentforum.org/posts/pZhEQieM9otKXhxmd/gradual-disempowerment-systemic-existential-risks-from" target="_blank" rel="noopener">Alignment Forum</a></li>
+    <li>« AI 2027 » / Plan A (AI Futures Project) : le résumé. <a href="https://ai-2027.com" target="_blank" rel="noopener">ai-2027.com</a></li>
+    <li>Richard Ngo, « AGI safety career advice » : ouverture + une section.</li>
+    <li>80,000 Hours, « AI governance and coordination » : le « in a nutshell ». <a href="https://80000hours.org/career-reviews/ai-governance-and-coordination/" target="_blank" rel="noopener">80000hours.org</a></li>
+    <li>Shah et al., « An Approach to Technical AGI Safety » (DeepMind) : le résumé.</li>
+  </ul>
+
+  <h2>Et après ?</h2>
+  <p class="muted">Pour continuer après aujourd'hui :</p>
+  <ul>
+    <li><a href="https://www.cesia.org" target="_blank" rel="noopener">CeSIA</a> · <a href="https://bluedot.org" target="_blank" rel="noopener">BlueDot</a> · <a href="https://www.ml4good.org" target="_blank" rel="noopener">ML4Good</a> (formations & communauté).</li>
+    <li><a href="https://lu.ma/ais-paris" target="_blank" rel="noopener">AIS Paris</a> (le calendrier des événements).</li>
+    <li>Le <strong>Dîner Machine</strong>, chaque lundi → <a href="/evenements">nos événements</a>.</li>
+  </ul>
+
+</div></main>
+
+<footer><div class="wrap">
+  Nouvelle Machine · <a href="/">nouvellemachine.com</a>
+</div></footer>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nouvellemachine.com/sitemap.xml
