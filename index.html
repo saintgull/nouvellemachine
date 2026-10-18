@@ -106,6 +106,8 @@
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .more-res{max-width:620px;margin:30px auto 0;text-align:center;font-size:1rem}
+  .more-res a{text-decoration:underline;text-underline-offset:2px}
   a.res{display:flex;flex-direction:column;padding:22px;border:1px solid var(--light-blue);background:#fff;transition:background .15s;color:var(--ink)}
   a.res:hover{background:var(--light-blue-wash);text-decoration:none}
   .res h3{font-size:1.3rem;color:var(--medium-blue);margin-bottom:6px}
@@ -127,7 +129,10 @@
       "url": "https://nouvellemachine.com/",
       "logo": "https://nouvellemachine.com/favicon.png",
       "description": "Communauté et newsletter sur la sûreté de l'intelligence artificielle (AI safety) à Paris : écrits, rencontres et dîners hebdomadaires, en français et en anglais.",
-      "areaServed": { "@type": "City", "name": "Paris" },
+      "areaServed": {
+        "@type": "City",
+        "name": "Paris"
+      },
       "sameAs": [
         "https://nouvellemachine.substack.com",
         "https://www.instagram.com/nouvellemachine",
@@ -140,72 +145,13 @@
       "@id": "https://nouvellemachine.com/#website",
       "url": "https://nouvellemachine.com/",
       "name": "Nouvelle Machine",
-      "inLanguage": ["fr", "en"],
-      "publisher": { "@id": "https://nouvellemachine.com/#org" }
-    },
-    {
-      "@type": "Event",
-      "name": "Banc d'Essai — build club sûreté de l'IA (Nouvelle Machine)",
-      "description": "Premier Banc d'Essai : trois heures pour construire à plusieurs un petit projet concret de sûreté de l'IA (une éval, une traduction, un premier post). Bilingue, sans prérequis.",
-      "startDate": "2026-10-18T14:00:00+02:00",
-      "endDate": "2026-10-18T17:00:00+02:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "image": "https://nouvellemachine.com/favicon.png",
-      "location": {
-        "@type": "Place",
-        "name": "Agora Studio",
-        "address": { "@type": "PostalAddress", "streetAddress": "53 rue de Cléry", "postalCode": "75002", "addressLocality": "Paris", "addressCountry": "FR" }
-      },
-      "organizer": { "@id": "https://nouvellemachine.com/#org" },
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://luma.com/6gzxitmx" }
-    },
-    {
-      "@type": "Event",
-      "name": "Dîner Machine — « Timelines » (dîner sûreté de l'IA, Paris)",
-      "description": "Dîner tech hebdomadaire bilingue sur la sûreté de l'IA. Cette semaine : les timelines — l'AGI, c'est pour quand ? Sans prérequis.",
-      "startDate": "2026-10-19T19:00:00+02:00",
-      "endDate": "2026-10-19T21:00:00+02:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "image": "https://nouvellemachine.com/favicon.png",
-      "location": {
-        "@type": "Place",
-        "name": "Veggie Lovers",
-        "address": { "@type": "PostalAddress", "streetAddress": "77 rue Saint-Martin", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR" }
-      },
-      "organizer": { "@id": "https://nouvellemachine.com/#org" },
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://luma.com/nouvellemachine" }
-    },
-    {
-      "@type": "Event",
-      "name": "Dîner Machine — « Le travail » (dîner sûreté de l'IA, Paris)",
-      "description": "Dîner tech hebdomadaire bilingue sur la sûreté de l'IA. Cette semaine : le travail — quels métiers l'IA aura mangés d'ici 2030 ? Sans prérequis.",
-      "startDate": "2026-10-26T19:00:00+01:00",
-      "endDate": "2026-10-26T21:00:00+01:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "image": "https://nouvellemachine.com/favicon.png",
-      "location": {
-        "@type": "Place",
-        "name": "Veggie Lovers",
-        "address": { "@type": "PostalAddress", "streetAddress": "77 rue Saint-Martin", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR" }
-      },
-      "organizer": { "@id": "https://nouvellemachine.com/#org" },
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://luma.com/nouvellemachine" }
-    },
-    {
-      "@type": "Event",
-      "name": "Banc d'Essai #2 — build club sûreté de l'IA (Nouvelle Machine)",
-      "description": "Deuxième Banc d'Essai : trois heures pour construire à plusieurs un petit projet concret de sûreté de l'IA (une éval, une traduction, un premier post). Bilingue, sans prérequis.",
-      "startDate": "2026-11-21T14:00:00+01:00",
-      "endDate": "2026-11-21T17:00:00+01:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "image": "https://nouvellemachine.com/favicon.png",
-      "location": { "@type": "Place", "name": "Agora Studio", "address": { "@type": "PostalAddress", "streetAddress": "53 rue de Cléry", "postalCode": "75002", "addressLocality": "Paris", "addressCountry": "FR" } },
-      "organizer": { "@id": "https://nouvellemachine.com/#org" },
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://luma.com/xyiow6bw" }
+      "inLanguage": [
+        "fr",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://nouvellemachine.com/#org"
+      }
     }
   ]
 }
@@ -259,16 +205,16 @@
   <header class="site-hero"><div class="wrap">
     <h1>Nouvelle Machine</h1>
     <p class="tagline" data-i18n="tagline">Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité : des écrits, des rencontres, et des dîners hebdomadaires à Paris.</p>
-    <p class="hero-nav" style="margin-top:16px;font-size:.95rem"><a href="/evenements">Événements</a> &nbsp;·&nbsp; <a href="/articles">Articles</a> &nbsp;·&nbsp; <a href="/communaute">Communauté</a></p>
+    <p class="hero-nav" style="margin-top:16px;font-size:.95rem"><a href="/articles">Articles</a> &nbsp;·&nbsp; <a href="/song">Clip</a></p>
   </div></header>
 
   <div class="wrap"><div class="two-col">
     <div class="col-event">
       <a class="card" id="eventLink" href="https://luma.com/nouvellemachine" target="_blank" rel="noopener">
         <h2 class="card-headline" data-i18n="event_label">Prochain événement</h2>
-        <p class="event-name" id="eventTitle">Dîner Machine</p>
-        <p class="event-meta"><span class="ico">◆</span><span id="eventDate">lundi 5 octobre · 19:00</span></p>
-        <p class="event-meta"><span class="ico">◆</span><span id="eventVenue">Restaurant Godjo · Paris</span></p>
+        <p class="event-name" id="eventTitle">Nouvelle Machine</p>
+        <p class="event-meta"><span class="ico">◆</span><span id="eventDate" data-i18n="event_fb_date">Dîners et build clubs</span></p>
+        <p class="event-meta"><span class="ico">◆</span><span id="eventVenue">Paris</span></p>
         <p class="event-desc" data-i18n="event_desc">Nos dîners hebdomadaires et décontractés sur la sûreté de l'IA. Ouverts à tous, sans prérequis.</p>
         <span class="go" data-i18n="event_cta">Réserver sur Luma →</span>
       </a>
@@ -297,6 +243,7 @@
       <a class="res" href="https://www.altruismeefficacefrance.org" target="_blank" rel="noopener"><h3>Altruisme Efficace France</h3><p data-i18n="res_aef">La communauté française qui cherche à faire le plus de bien possible, IA comprise.</p><span class="go">altruismeefficacefrance.org →</span></a>
       <a class="res" href="https://www.youtube.com/@Science4All" target="_blank" rel="noopener"><h3>Science4All</h3><p data-i18n="res_s4a">Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.</p><span class="go">youtube · Science4All →</span></a>
     </div>
+    <p class="more-res" data-i18n="res_more">Pour aller plus loin : s'informer, donner, s'engager ou changer de carrière, avec le guide <a href="https://lefuturologue.tinypages.co/" target="_blank" rel="noopener">Agir pour la sécurité de l'IA</a> du Futurologue →</p>
   </div></section>
 
   <section class="signup"><div class="wrap-narrow">
@@ -343,6 +290,7 @@
       event_label: "Prochain événement",
       event_desc: "Nos dîners hebdomadaires et décontractés sur la sûreté de l'IA. Ouverts à tous, sans prérequis.",
       event_cta: "Réserver sur Luma →",
+      event_fb_date: "Dîners et build clubs",
       article_label: "Dernier article",
       article_title: "Semaine du 5 octobre : c'est quoi, au juste, le doom ?",
       article_dek: "Le récap du dernier Dîner Machine : on a essayé de définir « le doom », avec l'actu IA de la semaine et nos prédictions.",
@@ -357,6 +305,7 @@
       res_pauseai: "Le versant plaidoyer et mobilisation, en France et à l'international.",
       res_futuro: "Interviews et débats en français sur les enjeux de l'IA, par Shaïman Thürler.",
       res_aef: "La communauté française qui cherche à faire le plus de bien possible, IA comprise.",
+      res_more: 'Pour aller plus loin : s\'informer, donner, s\'engager ou changer de carrière, avec le guide <a href="https://lefuturologue.tinypages.co/" target="_blank" rel="noopener">Agir pour la sécurité de l\'IA</a> du Futurologue →',
       res_s4a: "Lê Nguyên Hoang vulgarise la sécurité de l'IA, les maths et l'éthique des algorithmes.",
       signup_h: "Restons en contact",
       signup_sub: "Recevez les invitations aux dîners et les nouvelles de Nouvelle Machine.",
@@ -380,6 +329,7 @@
       event_label: "Next event",
       event_desc: "Our casual weekly dinners on AI safety. Open to everyone, no prerequisites.",
       event_cta: "RSVP on Luma →",
+      event_fb_date: "Dinners and build clubs",
       article_label: "Latest article",
       article_title: "What even is 'doom'? Plus new models and a prediction market",
       article_dek: "This article is only available in French. If you want a translated English version, feel free to request it in your anonymous feedback to us. You can find the link at the footer of our website.",
@@ -394,6 +344,7 @@
       res_pauseai: "The advocacy and grassroots side, in France and worldwide.",
       res_futuro: "Interviews and debates in French on what's at stake with AI, by Shaïman Thürler.",
       res_aef: "The French community trying to do the most good possible, AI included.",
+      res_more: 'Going further: getting informed, donating, volunteering or switching careers, with Le Futurologue\'s guide <a href="https://lefuturologue.tinypages.co/" target="_blank" rel="noopener">Agir pour la sécurité de l\'IA</a> (in French) →',
       res_s4a: "Lê Nguyên Hoang breaks down AI safety, maths and the ethics of algorithms.",
       signup_h: "Let's stay in touch",
       signup_sub: "Get dinner invites and news from Nouvelle Machine.",
@@ -405,7 +356,7 @@
       footer_feedback: 'Thoughts on Nouvelle Machine? <a href="https://www.admonymous.co/nouvellemachine" target="_blank" rel="noopener">Tell us anything, anonymously →</a>'
     }
   };
-  var HTML_KEYS = { footer_line: true, footer_feedback: true };
+  var HTML_KEYS = { footer_line: true, footer_feedback: true, res_more: true };
 
   function show(id){
     var s = document.querySelectorAll('.screen');
