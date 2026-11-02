@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--cobalt:#0700cc;--magenta:#e0486b;--coral:#ea8885;--ink:#14142e;--paper:#fffdfa;--line:#9bb8ef;--blob:#ecebf9}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:1500px;background:var(--paper);overflow:hidden}
+  body{font-family:'Work Sans',sans-serif;color:var(--ink);position:relative;padding:96px 96px 0}
+  .blob{position:absolute;top:-90px;right:-80px;width:300px;height:300px;border-radius:50%;background:var(--blob)}
+  .kicker{font-weight:600;font-size:21px;letter-spacing:.32em;color:var(--magenta)}
+  h1{font-family:'Instrument Serif',serif;font-weight:400;color:var(--cobalt);font-size:116px;line-height:.98;margin-top:22px;letter-spacing:-.01em}
+  .sub{font-family:'Instrument Serif',serif;font-style:italic;color:var(--coral);font-size:33px;margin-top:22px}
+  ul{list-style:none;margin-top:60px;border-top:1.5px solid var(--line)}
+  li{display:grid;grid-template-columns:200px 62px 1fr;align-items:center;padding:34px 0;border-bottom:1.5px solid var(--line)}
+  .date{font-weight:600;color:var(--cobalt);font-size:25px;letter-spacing:.08em}
+  .emoji{font-size:30px}
+  .title{font-family:"Instrument Serif",serif;font-size:49px;line-height:1.05}
+  .title i{color:var(--magenta)}
+  .meta{font-weight:300;font-size:22px;color:#6b6b80;margin-top:6px}
+  li.tonight .date::after{content:"CE SOIR";display:block;font-size:15px;letter-spacing:.2em;color:var(--magenta);margin-top:6px}
+  footer{position:absolute;left:96px;right:96px;bottom:74px;display:flex;justify-content:space-between;align-items:baseline}
+  .url{font-family:'Instrument Serif',serif;color:var(--cobalt);font-size:36px}
+  .tags{font-size:19px;letter-spacing:.2em;color:#8a8a9e}
+</style></head><body>
+<div class="blob"></div>
+<div class="kicker">NOUVELLE MACHINE · PARIS</div>
+<h1>Novembre</h1>
+<div class="sub">Les dîners du lundi, 19h, chez Veggie Lovers (Paris 4e)</div>
+<ul>
+  <li class="tonight"><span class="date">LUN. 2 NOV</span><span class="emoji">🍽️</span><div><div class="title">Dîner Machine · <i>« Pause »</i></div><div class="meta">faut-il mettre l'IA en pause ? avec Timothy Currie</div></div></li>
+  <li><span class="date">LUN. 9 NOV</span><span class="emoji">🍽️</span><div><div class="title">Dîner Machine · <i>« Surveiller l'IA »</i></div><div class="meta">peut-on encore surveiller une IA ?</div></div></li>
+  <li><span class="date">LUN. 16 NOV</span><span class="emoji">🍽️</span><div><div class="title">Dîner Machine · <i>invité spécial</i></div><div class="meta">thème à venir</div></div></li>
+  <li><span class="date">SAM. 21 NOV</span><span class="emoji">🛠️</span><div><div class="title">Banc d'Essai <i>#2</i> · build club</div><div class="meta">Agora Studio · 14h–17h · gros volet communication</div></div></li>
+  <li><span class="date">LUN. 23 NOV</span><span class="emoji">🍽️</span><div><div class="title">Dîner Machine · <i>« La peur »</i></div><div class="meta">est-ce que la peur fait bouger les gens ?</div></div></li>
+  <li><span class="date">LUN. 30 NOV</span><span class="emoji">🍽️</span><div><div class="title">Dîner Machine · <i>invité spécial</i></div><div class="meta">thème à venir</div></div></li>
+</ul>
+<footer><span class="url">nouvellemachine.com</span><span class="tags">BILINGUE FR / EN · SANS PRÉREQUIS</span></footer>
+</body></html>
