@@ -56,8 +56,26 @@ var ECO_ORGS = [
     desc: "Chaîne YouTube et podcast d'entretiens et de débats sur l'IA et ses risques." },
   { id: "inde-medias", name: "Auteurs indépendants", cat: "medias",
     desc: "Auteurs et conférenciers qui écrivent sur l'IA et ses risques." },
-  { id: "inde-recherche", name: "Indépendants", cat: "policy",
-    desc: "Chercheurs et organisateurs indépendants." },
+  { id: "inde-recherche", name: "Autres chercheurs", cat: "policy",
+    desc: "Chercheurs et organisateurs qui travaillent sur la sûreté de l'IA." },
+  { id: "montaigne", name: "Institut Montaigne", cat: "policy", url: "https://www.institutmontaigne.org",
+    desc: "Think tank ; notes sur l'IA sûre et sur la création d'une autorité française de l'IA." },
+  { id: "iaseai", name: "IASEAI", cat: "policy", url: "https://www.iaseai.org",
+    desc: "Association internationale pour une IA sûre et éthique, basée à Paris. Conférence IASEAI'26 à l'UNESCO." },
+  { id: "universites", name: "Recherche académique", cat: "technique",
+    desc: "Universitaires français qui travaillent sur la sûreté et la sécurité de l'IA." },
+  { id: "cianum", name: "Conseil de l'IA et du numérique", cat: "institutions",
+    url: "https://www.entreprises.gouv.fr/la-dge/actualites/le-conseil-national-du-numerique-devient-le-conseil-national-de-lia-et-du",
+    desc: "Conseil consultatif national (ex-CNNum, 2025)." },
+  { id: "cnil", name: "CNIL, service de l'IA", cat: "institutions",
+    url: "https://cnil.fr/fr/creation-dun-service-de-lintelligence-artificielle-la-cnil-et-lancement-des-travaux-sur-les-bases-de",
+    desc: "Le service de l'intelligence artificielle de la CNIL (2023)." },
+  { id: "senat", name: "Parlementaires", cat: "institutions",
+    desc: "Élus qui ont porté la question des risques de l'IA au Parlement." },
+  { id: "wise", name: "WISE Paris", cat: "formation", url: "https://luma.com/m84muwjt",
+    desc: "Women in Safety & Ethics : rencontres à Paris autour de l'IA responsable et de la sûreté de l'IA." },
+  { id: "grandcontinent", name: "Le Grand Continent", cat: "medias", url: "https://legrandcontinent.eu",
+    desc: "Revue ; sa série « Puissances de l'IA » publie et commente en français des textes sur les risques de l'IA." },
   { id: "critiques", name: "Voix sceptiques", cat: "critiques",
     desc: "Figures publiques qui contestent l'idée que l'IA avancée pose des risques majeurs. Elles font partie du débat." }
 ];
@@ -78,6 +96,12 @@ var ECO_PEOPLE = [
   { name: "Markov Grey", orgs: ["cesia"], role: "Responsable de la gouvernance technique", src: "https://cesia.org/en/about/" },
   { name: "Arthur Grimonpont", orgs: ["cesia"], role: "Responsable du plaidoyer", src: "https://cesia.org/en/about/" },
   { name: "Anne Richard", orgs: ["cesia"], role: "Opérations", src: "https://cesia.org/en/about/" },
+  { name: "Pauline Charazac", orgs: ["cesia"], role: "Responsable des relations institutionnelles", src: "https://cesia.org/en/about/" },
+  { name: "Chloé Touzet", orgs: ["saferai"], role: "Responsable policy", src: "https://www.safer-ai.org/about" },
+  { name: "Alexandre Variengien", orgs: ["inde-recherche"], role: "Cofondateur du CeSIA ; a dirigé le benchmark BELLS",
+    src: "https://www.alignmentforum.org/posts/rCLs56wfissFheLap/announcing-cesia-the-french-center-for-ai-safety" },
+  { name: "Milo Rignell", orgs: ["montaigne"], role: "Expert résident, numérique et nouvelles technologies",
+    src: "https://institutmontaigne.org/publications/investir-lia-sure-et-digne-de-confiance-un-imperatif-europeen-une-opportunite-francaise" },
   { name: "Henry Papadatos", orgs: ["saferai"], role: "Directeur exécutif", src: "https://www.safer-ai.org/about" },
   { name: "Siméon Campos", orgs: ["saferai"], role: "Fondateur ; président du conseil d'administration", src: "https://www.safer-ai.org/about" },
   { name: "Tom David", orgs: ["gpai"], role: "Cofondateur et CEO", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
@@ -89,6 +113,25 @@ var ECO_PEOPLE = [
   // Technique
   { name: "Yoshua Bengio", orgs: ["lawzero"], role: "Fondateur, coprésident et directeur scientifique ; prix Turing",
     src: "https://lawzero.org/en/team" },
+  { name: "Denis Shilov", orgs: ["whitecircle"], role: "Fondateur", src: "https://sifted.eu/articles/denis-shilov-white-circle-ai-safety/" },
+  { name: "Alex Combessie", orgs: ["giskard"], role: "Cofondateur et CEO ; pilote le benchmark Phare", src: "https://arxiv.org/pdf/2505.11365" },
+  { name: "Vincent Corruble", orgs: ["universites"], role: "Maître de conférences, Sorbonne Université (LIP6) ; a organisé le Paris AI Safety Symposium (2024)",
+    src: "https://scai.sorbonne-universite.fr/events/paris-ai-safety-symposium-839" },
+  { name: "El Mahdi El Mhamdi", orgs: ["universites"], role: "Professeur à l'École polytechnique ; coauteur de Le fabuleux chantier",
+    src: "https://www.polytechnique-insights.com/en/contributors/el-mahdi-el-mhamdi/" },
+  { name: "Lê Nguyên Hoang", orgs: ["universites"], role: "Télécom Paris ; cofondateur de Tournesol, chaîne Science4All",
+    src: "https://www.telecom-paris.fr/le-nguyen-hoang?l=en" },
+
+  // Institutions
+  { name: "Guillaume Poupard", orgs: ["cianum"], role: "Coprésident ; ancien envoyé du Sommet pour l'action sur l'IA (IA de confiance)",
+    src: "https://www.banquedesterritoires.fr/le-conseil-de-lia-et-du-numerique-incite-la-plus-grande-prudence-sur-lia-agentique" },
+  { name: "Anne Bouverot", orgs: ["cianum"], role: "Coprésidente ; ancienne envoyée du Sommet pour l'action sur l'IA",
+    src: "https://www.banquedesterritoires.fr/le-conseil-de-lia-et-du-numerique-incite-la-plus-grande-prudence-sur-lia-agentique" },
+  { name: "Félicien Vallet", orgs: ["cnil"], role: "Chef du service de l'intelligence artificielle", src: "https://iapp.org/about/person/felicien-vallet" },
+  { name: "Ghislaine Senée", orgs: ["senat"], role: "Sénatrice ; a co-organisé le colloque « Faut-il appuyer sur pause ? » sur les dangers de l'IA (Sénat, déc. 2025)",
+    src: "https://www.librealire.org/colloque-sur-les-dangers-de-l-ia-faut-il-appuyer-sur-pause" },
+  { name: "Thomas Dossus", orgs: ["senat"], role: "Sénateur ; intervenant au colloque sur les dangers de l'IA (Sénat, déc. 2025)",
+    src: "https://www.librealire.org/colloque-sur-les-dangers-de-l-ia-faut-il-appuyer-sur-pause" },
 
   // Labs
   { name: "Arthur Mensch", orgs: ["mistral"], role: "Cofondateur et CEO", src: "https://en.wikipedia.org/wiki/Arthur_Mensch" },
@@ -110,6 +153,10 @@ var ECO_PEOPLE = [
     src: "https://www.blogdumoderateur.com/harnais-superintelligence-alignement-flavien-chervet-decrypte-concepts-ia-derriere-bd-helo/" },
   { name: "Aymeric Roucher", orgs: ["inde-medias"], role: "Ingénieur, ancien responsable des agents IA chez Hugging Face ; auteur de Ultra-intelligence (Odile Jacob, 2025)",
     src: "https://www.odilejacob.fr/catalogue/sciences/informatique/ultra-intelligence_9782415013141.php" },
+  { name: "Thibaut Giraud", orgs: ["inde-medias"], role: "Philosophe, chaîne YouTube Monsieur Phi ; auteur de La Parole aux machines (2025)",
+    src: "https://www.mollat.com/livres/3367295/thibaut-giraud-la-parole-aux-machines-philosophie-des-grands-modeles-de-langage" },
+  { name: "Gilles Gressani", orgs: ["grandcontinent"], role: "Directeur",
+    src: "https://legrandcontinent.eu/fr/2026/01/28/lia-est-un-risque-existentiel-lalerte-de-dario-amodei-texte-integral-commente/" },
 
   // Voix sceptiques (description neutre et sourcée uniquement)
   { name: "Yann LeCun", orgs: ["critiques"], role: "Prix Turing ; président exécutif d'AMI Labs (Paris), professeur à NYU.",
@@ -117,5 +164,7 @@ var ECO_PEOPLE = [
   { name: "Jean-Gabriel Ganascia", orgs: ["critiques"], role: "Professeur émérite à Sorbonne Université ; auteur de Le Mythe de la Singularité (Seuil, 2017)",
     src: "https://scai.sorbonne-universite.fr/researchers/ganascia-jean-gabriel" },
   { name: "Luc Julia", orgs: ["critiques"], role: "Ingénieur en IA ; auteur de L'intelligence artificielle n'existe pas (2019) et IA génératives, pas créatives (2025)",
-    src: "https://fr.wikipedia.org/wiki/Luc_Julia" }
+    src: "https://fr.wikipedia.org/wiki/Luc_Julia" },
+  { name: "Benjamin Pajot", orgs: ["critiques"], role: "Chercheur à l'IFRI ; auteur de la note « L'IA hors de sa boîte : apocalypse now ? » (oct. 2026)",
+    src: "https://www.ifri.org/sites/default/files/2026-10/ifri_pajot_ia_hors_de_sa_boite_2026.pdf" }
 ];
