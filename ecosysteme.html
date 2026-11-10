@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qui fait quoi en sûreté de l'IA — Nouvelle Machine</title>
+<meta name="description" content="La carte de l'écosystème francophone de la sûreté de l'IA : organisations, personnes et rôles, d'après des sources publiques.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --medium-blue:#0700cc;--cotton-rose:#ffcfd2;--light-coral:#ea8885;--magenta-bloom:#e0486b;
+    --ink:#14142e;--paper:#fffdfa;--light-blue:#9bb8ef;--muted:#6b6b80;--line:#d9dcf2;
+    --serif:'Instrument Serif',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-weight:300;overflow-x:hidden}
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px}
+  .wide{max-width:1100px;margin:0 auto;padding:0 16px}
+  a{color:var(--medium-blue);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--magenta-bloom)}
+  .topnav{border-bottom:1px solid var(--cotton-rose)}
+  .topnav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px}
+  .topnav .brand{font-family:var(--serif);font-size:1.15rem;color:var(--medium-blue);text-decoration:none}
+  .topnav .navlinks a{font-size:.9rem;margin-left:18px;color:var(--ink);text-decoration:none}
+  .hero{padding:48px 0 12px}
+  h1{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(2rem,5.4vw,3rem);color:var(--medium-blue)}
+  .dek{font-family:var(--serif);font-style:italic;color:var(--light-coral);font-size:1.2rem;margin-top:12px;line-height:1.4}
+  .lead{margin-top:16px;font-size:1rem}
+
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 12px}
+  .filters button{font:inherit;font-size:.85rem;border:1px solid var(--light-blue);background:#fff;color:var(--ink);padding:5px 12px;border-radius:999px;cursor:pointer}
+  .filters button[aria-pressed="true"]{background:var(--medium-blue);border-color:var(--medium-blue);color:#fff}
+
+  .stage{position:relative;border:1px solid var(--line);background:#fff}
+  #graph{display:block;width:100%;height:600px}
+  .cat-label{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;fill:var(--muted);font-weight:500}
+  .org-node{fill:var(--medium-blue);stroke:#fff;stroke-width:2px;cursor:pointer}
+  .org-node.critique{fill:#8a8a99}
+  .org-label{font-family:var(--serif);font-size:15px;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:4px}
+  .person-node{fill:var(--magenta-bloom);stroke:#fff;stroke-width:2px;cursor:pointer}
+  .person-node.critique{fill:#b3b3c0}
+  .link{stroke:var(--line);stroke-width:1.5px}
+  .dim{opacity:.15}
+  .tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-size:.82rem;line-height:1.4;padding:8px 10px;max-width:260px;opacity:0;transition:opacity .1s}
+  .tip strong{font-weight:500;display:block}
+
+  .panel{margin-top:12px;min-height:64px;padding:16px;border:1px solid var(--line);background:#fff;font-size:.95rem}
+  .panel h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;color:var(--medium-blue)}
+  .panel .hint{color:var(--muted)}
+
+  .list{margin-top:40px}
+  .list h2{font-family:var(--serif);font-weight:400;font-size:1.7rem;color:var(--medium-blue);margin:28px 0 8px}
+  .org{border-top:1px solid var(--line);padding:14px 0}
+  .org h3{font-family:var(--serif);font-weight:400;font-size:1.25rem}
+  .org .desc{font-size:.92rem;color:var(--muted)}
+  .org ul{list-style:none;margin-top:6px}
+  .org li{font-size:.95rem;padding:2px 0}
+  .org li .role{color:var(--muted)}
+  .src{font-size:.8rem;margin-left:4px}
+  .note{margin:48px 0 0;padding:18px;border:1px solid var(--cotton-rose);font-size:.92rem}
+  footer{padding:44px 0;text-align:center;border-top:1px solid var(--cotton-rose);font-size:.9rem;margin-top:40px}
+  footer .copyright{display:block;margin-top:14px;font-size:.82rem;opacity:.5}
+  @media (max-width:640px){.org-label{font-size:13px}.filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.filters button{flex:none}}
+</style>
+</head>
+<body>
+
+<nav class="topnav"><div class="wrap">
+  <a class="brand" href="/">Nouvelle Machine</a>
+  <span class="navlinks"><a href="/articles">Articles</a><a href="/ecosysteme">Écosystème</a></span>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Qui fait quoi en sûreté de l'IA</h1>
+  <p class="dek">La carte de l'écosystème francophone : organisations, personnes, rôles.</p>
+  <p class="lead">Pour s'impliquer, il faut savoir qui travaille sur quoi. Cette carte rassemble celles et ceux qui, en France et dans la francophonie, travaillent sur les risques de l'IA avancée, et quelques voix qui les contestent. Cliquez sur un point pour voir le détail et la source.</p>
+</div></header>
+
+<main>
+  <div class="wide">
+    <div class="filters" id="filters" role="group" aria-label="Filtrer par catégorie"></div>
+    <div class="stage">
+      <svg id="graph" role="img" aria-label="Graphe des organisations et des personnes de la sûreté de l'IA francophone, regroupées par catégorie. La même information figure en liste sous le graphe."></svg>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="panel" id="panel" aria-live="polite"><p class="hint">Survolez ou touchez un point. Les grands cercles sont des organisations, les petits des personnes.</p></div>
+  </div>
+
+  <div class="wrap">
+    <section class="list" id="list" aria-label="Liste complète"></section>
+
+    <p class="note">Toutes les informations viennent de sources publiques : pages équipe des organisations, profils publics, presse. Chaque nom renvoie à sa source. Dernière vérification : <span id="updated"></span>. Une erreur, un rôle qui a changé, ou vous préférez ne pas figurer sur la carte ? <a href="https://cal.com/saintgull/call">Écrivez-nous</a> et nous corrigeons ou retirons sans discuter.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <p>Paris · <a href="https://nouvellemachine.substack.com">Substack</a></p>
+  <span class="copyright">© 2026 Erin Constance</span>
+</div></footer>
+
+<script src="/ecosysteme-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+(function(){
+  var orgById = {}; ECO_ORGS.forEach(function(o){ o.people = []; orgById[o.id] = o; });
+  ECO_PEOPLE.forEach(function(p){ p.orgs.forEach(function(id){ orgById[id].people.push(p); }); });
+  var cats = ECO_CATS.filter(function(c){ return ECO_ORGS.some(function(o){ return o.cat === c.id; }); });
+  document.getElementById("updated").textContent = ECO_UPDATED;
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function srcLink(url){ return '<a class="src" href="'+esc(url)+'" target="_blank" rel="noopener">source</a>'; }
+
+  // ---- Liste (vue texte, toujours complète) ----
+  var list = document.getElementById("list"), html = "";
+  cats.forEach(function(c){
+    html += '<h2 id="cat-'+c.id+'">'+esc(c.label)+'</h2>';
+    ECO_ORGS.filter(function(o){ return o.cat === c.id; }).forEach(function(o){
+      html += '<div class="org"><h3>'+(o.url ? '<a href="'+esc(o.url)+'" target="_blank" rel="noopener">'+esc(o.name)+'</a>' : esc(o.name))+
+        (o.country ? ' <span class="desc">('+esc(o.country)+')</span>' : '')+'</h3><p class="desc">'+esc(o.desc)+'</p>';
+      if (o.people.length) {
+        html += '<ul>';
+        o.people.forEach(function(p){ html += '<li><strong>'+esc(p.name)+'</strong>, <span class="role">'+esc(p.role)+'</span>'+srcLink(p.src)+'</li>'; });
+        html += '</ul>';
+      }
+      html += '</div>';
+    });
+  });
+  list.innerHTML = html;
+
+  // ---- Graphe : une cellule par catégorie, organisations en grille, personnes en anneau ----
+  var svg = d3.select("#graph"), tip = document.getElementById("tip"), panel = document.getElementById("panel");
+  var active = null;
+
+  function draw(){
+    var W = document.getElementById("graph").getBoundingClientRect().width;
+    var cols = W < 640 ? 2 : 4, cellW = W / cols, perRow = cellW < 200 ? 1 : 2;
+    var slotW = cellW / perRow, slotH = 112, head = 46, nodes = [], links = [], labels = [];
+
+    // hauteur de chaque rangée de catégories = la catégorie la plus remplie
+    var rowsOfCats = [];
+    cats.forEach(function(c, i){ (rowsOfCats[Math.floor(i / cols)] = rowsOfCats[Math.floor(i / cols)] || []).push(c); });
+    var y0 = 0, pos = {};
+    rowsOfCats.forEach(function(row){
+      var h = 0;
+      row.forEach(function(c, j){
+        var orgs = ECO_ORGS.filter(function(o){ return o.cat === c.id; });
+        var lines = Math.ceil(orgs.length / perRow);
+        h = Math.max(h, head + lines * slotH + 8);
+        labels.push({ c: c, x: (j + 0.5) * cellW, y: y0 + 22 });
+        orgs.forEach(function(o, k){
+          var n = orgs.length, inLine = Math.min(perRow, n - Math.floor(k / perRow) * perRow);
+          var x = j * cellW + (cellW - inLine * slotW) / 2 + (k % perRow + 0.5) * slotW;
+          var y = y0 + head + Math.floor(k / perRow) * slotH + 40;
+          var r = 9 + Math.sqrt(o.people.length) * 4;
+          pos[o.id] = { x: x, y: y, r: r };
+          nodes.push({ kind: "org", org: o, cat: o.cat, x: x, y: y, r: r });
+        });
+      });
+      y0 += h;
+    });
+    ECO_PEOPLE.forEach(function(p){
+      var home = p.orgs[0], o = orgById[home], P = pos[home], i = o.people.indexOf(p), n = o.people.length;
+      var a = -Math.PI / 2 + (i + 0.5) * 2 * Math.PI / n, R = P.r + 11;
+      var d = { kind: "person", person: p, cat: o.cat, x: P.x + R * Math.cos(a), y: P.y + R * Math.sin(a), r: 4.5 };
+      nodes.push(d);
+      p.orgs.slice(1).forEach(function(id){ links.push({ a: d, b: pos[id], cat: d.cat }); });
+    });
+
+    svg.attr("viewBox", "0 0 " + W + " " + y0).style("height", y0 + "px");
+    svg.selectAll("*").remove();
+    svg.append("g").selectAll("text").data(labels).join("text")
+      .attr("class", "cat-label").attr("text-anchor", "middle")
+      .attr("x", function(d){ return d.x; }).attr("y", function(d){ return d.y; })
+      .text(function(d){ return d.c.label; })
+      .each(function(){ wrapLabel(d3.select(this), cellW - 20); });
+    svg.append("g").selectAll("line").data(links).join("line").attr("class", "link")
+      .attr("x1", function(d){ return d.a.x; }).attr("y1", function(d){ return d.a.y; })
+      .attr("x2", function(d){ return d.b.x; }).attr("y2", function(d){ return d.b.y; });
+    svg.append("g").selectAll("circle").data(nodes).join("circle")
+      .attr("class", function(d){ return (d.kind === "org" ? "org-node" : "person-node") + (d.cat === "critiques" ? " critique" : ""); })
+      .attr("cx", function(d){ return d.x; }).attr("cy", function(d){ return d.y; }).attr("r", function(d){ return d.r; })
+      .attr("tabindex", 0).attr("role", "button")
+      .attr("aria-label", function(d){ return d.kind === "org" ? d.org.name : d.person.name; })
+      .on("mouseenter", function(e, d){ showTip(e, d); })
+      .on("mouseleave", function(){ tip.style.opacity = 0; })
+      .on("click", function(e, d){ select(d); })
+      .on("keydown", function(e, d){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+    svg.append("g").selectAll("text").data(nodes.filter(function(d){ return d.kind === "org"; })).join("text")
+      .attr("class", "org-label").attr("text-anchor", "middle")
+      .attr("x", function(d){ return d.x; }).attr("y", function(d){ return d.y + d.r + 30; })
+      .text(function(d){ return d.org.name; })
+      .each(function(){ wrapLabel(d3.select(this), slotW - 10); });
+    applyFilter();
+  }
+
+  function wrapLabel(text, width){
+    var words = text.text().split(" "), line = [], y = text.attr("y"), x = text.attr("x"), dy = 0;
+    text.text(null);
+    var tspan = text.append("tspan").attr("x", x).attr("y", y);
+    words.forEach(function(w){
+      line.push(w); tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width && line.length > 1) {
+        line.pop(); tspan.text(line.join(" ")); line = [w]; dy += 14;
+        tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", dy).text(w);
+      }
+    });
+  }
+
+  function showTip(e, d){
+    var stage = document.querySelector(".stage").getBoundingClientRect();
+    tip.innerHTML = d.kind === "org"
+      ? "<strong>" + esc(d.org.name) + "</strong>" + (d.org.people.length ? d.org.people.map(function(p){ return esc(p.name); }).join(", ") : esc(d.org.desc))
+      : "<strong>" + esc(d.person.name) + "</strong>" + esc(d.person.role);
+    var x = e.clientX - stage.left + 12, y = e.clientY - stage.top + 12;
+    tip.style.left = Math.max(0, Math.min(x, stage.width - 270)) + "px"; tip.style.top = y + "px"; tip.style.opacity = 1;
+  }
+
+  function select(d){
+    if (d.kind === "org") {
+      var o = d.org;
+      panel.innerHTML = "<h3>" + (o.url ? '<a href="' + esc(o.url) + '" target="_blank" rel="noopener">' + esc(o.name) + '</a>' : esc(o.name)) + "</h3><p>" + esc(o.desc) + "</p>" +
+        (o.people.length ? "<p>" + o.people.map(function(p){ return "<strong>" + esc(p.name) + "</strong>, " + esc(p.role) + srcLink(p.src); }).join("<br>") + "</p>" : "");
+    } else {
+      var p = d.person;
+      panel.innerHTML = "<h3>" + esc(p.name) + "</h3><p>" + esc(p.role) + "<br>" + p.orgs.map(function(id){ return esc(orgById[id].name); }).join(" · ") + srcLink(p.src) + "</p>";
+    }
+  }
+
+  // ---- Filtres ----
+  var filters = document.getElementById("filters");
+  [{ id: null, label: "Tout" }].concat(cats).forEach(function(c){
+    var b = document.createElement("button");
+    b.textContent = c.label; b.setAttribute("aria-pressed", c.id === active ? "true" : "false");
+    b.onclick = function(){
+      active = c.id;
+      filters.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      applyFilter();
+    };
+    filters.appendChild(b);
+  });
+  function applyFilter(){
+    svg.selectAll("circle, .org-label, .link").classed("dim", function(d){ return active && d.cat !== active; });
+  }
+
+  draw();
+  var t, lastW = window.innerWidth;
+  window.addEventListener("resize", function(){ if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(t); t = setTimeout(draw, 200); });
+})();
+</script>
+</body>
+</html>
