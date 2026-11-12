@@ -22,13 +22,13 @@
   a{color:var(--medium-blue);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
   a:hover{color:var(--magenta-bloom)}
   .topnav{border-bottom:1px solid var(--cotton-rose)}
-  .topnav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px}
+  .topnav .wide{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px}
   .topnav .brand{font-family:var(--serif);font-size:1.15rem;color:var(--medium-blue);text-decoration:none}
   .topnav .navlinks a{font-size:.9rem;margin-left:18px;color:var(--ink);text-decoration:none}
   .hero{padding:44px 0 8px}
   h1{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(2rem,5.4vw,3rem);color:var(--medium-blue)}
   .dek{font-family:var(--serif);font-style:italic;color:var(--light-coral);font-size:1.2rem;margin-top:12px;line-height:1.4}
-  .lead{margin-top:14px;font-size:1rem}
+  .lead{margin-top:14px;font-size:1rem;max-width:62ch}
 
   /* ---- Carte ---- */
   .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:22px 0 10px}
@@ -88,19 +88,19 @@
 
   /* ---- Note ---- */
   .src{font-size:.8rem;margin-left:4px}
-  .note{margin:48px 0 0;padding:18px;border:1px solid var(--cotton-rose);font-size:.92rem}
+  .note{margin:24px 0 0;padding:18px;border:1px solid var(--cotton-rose);font-size:.92rem}
   footer{padding:44px 0;text-align:center;border-top:1px solid var(--cotton-rose);font-size:.9rem;margin-top:40px}
   footer .copyright{display:block;margin-top:14px;font-size:.82rem;opacity:.5}
 </style>
 </head>
 <body>
 
-<nav class="topnav"><div class="wrap">
+<nav class="topnav"><div class="wide">
   <a class="brand" href="/">Nouvelle Machine</a>
   <span class="navlinks"><a href="/articles">Articles</a><a href="/ecosysteme">Écosystème</a></span>
 </div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero"><div class="wide">
   <h1>Qui fait quoi en sûreté de l'IA</h1>
   <p class="dek">La carte de l'écosystème francophone : organisations, personnes, liens.</p>
   <p class="lead">Cette carte rassemble celles et ceux qui, en France, travaillent sur les risques de l'IA avancée, et quelques voix qui les contestent. Zoomez pour voir les noms, cliquez sur un point pour suivre ses liens.</p>
@@ -131,7 +131,7 @@
     </div>
   </div>
 
-  <div class="wrap">
+  <div class="wide">
     <p class="note">Cette carte est une classification personnelle : elle ne reflète pas les opinions des personnes et des organisations qui y figurent. Toutes les informations viennent de sources publiques : pages équipe des organisations, profils LinkedIn publics, presse. Chaque fiche renvoie à sa source. Dernière vérification : <span id="updated"></span>. Une erreur, un rôle qui a changé, ou vous préférez ne pas figurer sur la carte ? <a href="https://cal.com/saintgull/call">Écrivez-nous</a> et nous corrigeons ou retirons sans discuter.</p>
   </div>
 </main>
