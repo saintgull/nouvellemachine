@@ -2,7 +2,7 @@
 // Règle : n'entre ici que ce que la personne ou son organisation a rendu public.
 // Chaque personne a une source (page équipe, profil public, presse). Vérifié le 2026-11-10.
 // li = profil LinkedIn public (trouvé via la page équipe de l'orga ou un résultat de recherche).
-// PIAF (Collas, Provost, Dana), nom complet d'Eloïse, rôle de Martin Kunev : confirmés par Erin le 2026-11-12.
+// Maxime Galpin, PIAF (Collas, Provost, Dana), nom complet d'Eloïse, rôle de Martin Kunev : confirmés par Erin le 2026-11-12.
 // Hors carte en attendant confirmation : voir Obsidian, DATABASE PERSONNES-ORGA (revue publique).
 
 var ECO_UPDATED = "12 novembre 2026";
@@ -62,6 +62,8 @@ var ECO_ORGS = [
     desc: "Chercheurs et organisateurs qui travaillent sur la sûreté de l'IA." },
   { id: "montaigne", name: "Institut Montaigne", cat: "policy", url: "https://www.institutmontaigne.org",
     desc: "Think tank ; notes sur l'IA sûre et sur la création d'une autorité française de l'IA." },
+  { id: "aisafetyconnect", name: "AI Safety Connect", cat: "policy", url: "https://village.ai/company/ai-safety-connect",
+    desc: "Rencontres de haut niveau sur la sûreté de l'IA, en marge des grands sommets (Sommet de Paris, Assemblée générale de l'ONU)." },
   { id: "iaseai", name: "IASEAI", cat: "policy", url: "https://www.iaseai.org",
     desc: "Association internationale pour une IA sûre et éthique, basée à Paris. Conférence IASEAI'26 à l'UNESCO." },
   { id: "universites", name: "Recherche académique", cat: "technique",
@@ -69,11 +71,21 @@ var ECO_ORGS = [
   { id: "cianum", name: "Conseil de l'IA et du numérique", cat: "institutions",
     url: "https://www.entreprises.gouv.fr/la-dge/actualites/le-conseil-national-du-numerique-devient-le-conseil-national-de-lia-et-du",
     desc: "Conseil consultatif national (ex-CNNum, 2025)." },
+  { id: "anssi", name: "ANSSI", cat: "institutions", url: "https://cyber.gouv.fr",
+    desc: "Agence nationale de la sécurité des systèmes d'information ; composante de l'INESIA." },
+  { id: "inria", name: "Inria", cat: "institutions", url: "https://www.inria.fr",
+    desc: "Institut national de recherche en sciences et technologies du numérique ; composante de l'INESIA." },
+  { id: "lne", name: "LNE", cat: "institutions", url: "https://www.lne.fr",
+    desc: "Laboratoire national de métrologie et d'essais, qui évalue les systèmes d'IA ; composante de l'INESIA." },
+  { id: "peren", name: "PEReN", cat: "institutions", url: "https://www.economie.gouv.fr/pole-dexpertise-de-la-regulation-numerique-peren",
+    desc: "Pôle d'expertise de la régulation numérique ; composante de l'INESIA." },
   { id: "cnil", name: "CNIL, service de l'IA", cat: "institutions",
     url: "https://cnil.fr/fr/creation-dun-service-de-lintelligence-artificielle-la-cnil-et-lancement-des-travaux-sur-les-bases-de",
     desc: "Le service de l'intelligence artificielle de la CNIL (2023)." },
   { id: "senat", name: "Parlementaires", cat: "institutions",
     desc: "Élus qui ont porté la question des risques de l'IA au Parlement." },
+  { id: "aisafetyparis", name: "AI Safety Paris", cat: "formation", url: "https://aisafety.paris",
+    desc: "La communauté des personnes qui travaillent sur la sûreté, la gouvernance et l'alignement de l'IA à Paris : événements, bureau partagé, ressources." },
   { id: "wise", name: "WISE Paris", cat: "formation", url: "https://luma.com/m84muwjt",
     desc: "Women in Safety & Ethics : rencontres à Paris autour de l'IA responsable et de la sûreté de l'IA." },
   { id: "grandcontinent", name: "Le Grand Continent", cat: "medias", url: "https://legrandcontinent.eu",
@@ -148,13 +160,10 @@ var ECO_PEOPLE = [
   { name: "Diego Dorn", li: "https://www.linkedin.com/in/diegodorn/", orgs: ["ml4good"], role: "Enseigne aux bootcamps ML4Good ; a dirigé le benchmark BELLS au CeSIA", src: "https://ddorn.fr/" },
   { name: "Madeleine Amiel-Jourdaa", li: "https://www.linkedin.com/in/madeleine-amiel-jourdaa/", orgs: ["aef"], role: "Présidente du conseil d'administration", src: "https://www.altruismeefficacefrance.org/a-propos" },
   { name: "Capucine Griot", li: "https://www.linkedin.com/in/capucine-griot/", orgs: ["aef"], role: "Directrice", src: "https://www.altruismeefficacefrance.org/a-propos" },
-  { name: "Corentin Biteau", li: "https://www.linkedin.com/in/corentin-biteau-365299117/", orgs: ["aef"], role: "Chargé de recherche", src: "https://www.altruismeefficacefrance.org/a-propos" },
   { name: "Antonin Peronnet", li: "https://www.linkedin.com/in/antonin-peronnet-a5496a242", orgs: ["piaf"], role: "Étudiant à Télécom Paris ; membre de P.I.A.F. Saclay", src: "https://github.com/rambip" },
   { name: "Antoine Maier", orgs: ["gpai"], role: "Chercheur en sécurité de l'IA", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
   { name: "Jean-Marie John-Mathews", orgs: ["giskard"], role: "Cofondateur et co-CEO", src: "https://giskard.ai/about" },
   { name: "Pierre Le Jeune", orgs: ["giskard"], role: "Responsable de la recherche en IA", src: "https://giskard.ai/about" },
-  { name: "Guillaume Vorreux", orgs: ["aef"], role: "Directeur du programme Job Engagé", src: "https://www.altruismeefficacefrance.org/a-propos" },
-  { name: "Alix Pham", orgs: ["aef"], role: "Responsable programmes et initiatives", src: "https://www.altruismeefficacefrance.org/a-propos" },
   { name: "Estéban Collas", orgs: ["piaf"], role: "Président", src: "https://piaf-saclay.org" },
   { name: "Lenny Provost", orgs: ["piaf"], role: "Trésorier", src: "https://piaf-saclay.org" },
   { name: "Léo Dana", orgs: ["effisciences"], role: "EffiSciences ; mentor des projets techniques de P.I.A.F.", src: "https://piaf-saclay.org" },
@@ -162,6 +171,19 @@ var ECO_PEOPLE = [
   { name: "Nada Hegazy", orgs: ["saferai"], role: "Opérations et assistanat de direction", src: "https://www.safer-ai.org/about" },
   { name: "Nia Gardner", orgs: ["ml4good"], role: "Membre du conseil d'administration ; ancienne directrice exécutive",
     src: "https://forum.effectivealtruism.org/posts/8BdJrjNCCHKsSWXp9/ml4good-is-scaling-and-hiring" },
+  { name: "Lola Carbonell", orgs: ["gpai"], role: "Cofondatrice ; secrétaire générale et directrice des affaires internationales", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Paul Fictor", orgs: ["gpai"], role: "Directeur des opérations", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Tangui Reltgen", orgs: ["gpai"], role: "Chercheur en sécurité de l'IA", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Julia Pagani", orgs: ["gpai"], role: "Assistante de projet, international", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Cyrus Hodes", orgs: ["aisafetyconnect"], role: "Fondateur", src: "https://village.ai/company/ai-safety-connect" },
+  { name: "Nicolas Miailhe", orgs: ["aisafetyconnect"], role: "Cofondateur ; cofondateur de The Future Society et de PRISM Eval", src: "https://village.ai/company/ai-safety-connect" },
+  { name: "Maxime Galpin", orgs: ["aisafetyparis"], role: "Anime la communauté AI Safety Paris (événements, bureau)", src: "https://aisafety.paris" },
+  { name: "Vincent Strubel", orgs: ["anssi"], role: "Directeur général", src: "https://cyber.gouv.fr/nous-connaitre/lagence/organisation/direction-generale/" },
+  { name: "Agnès Delaborde", orgs: ["lne"], role: "Responsable du département Évaluation de l'IA", src: "https://indico.ijclab.in2p3.fr/event/11551/contributions/38038/attachments/25815/38046/16_Agn%C3%A8s%20DELABORDE_LNE_IA_metrologie.pdf" },
+  { name: "Guillaume Avrin", orgs: ["lne"], role: "Coordinateur national pour l'IA ; ancien responsable de l'évaluation de l'IA au LNE", src: "https://www.enseignementsup-recherche.gouv.fr/fr/nomination-de-m-guillaume-avrin-au-poste-de-coordinateur-national-pour-l-intelligence-artificielle-89179" },
+  { name: "Renaud Labelle", orgs: ["peren"], role: "Directeur", src: "https://www.economie.gouv.fr/pole-dexpertise-de-la-regulation-numerique-peren" },
+  { name: "Vanina Paoli-Gagin", orgs: ["senat"], role: "Sénatrice (Les Indépendants) ; proposition de résolution européenne sur l'alignement des IA, mission gouvernementale sur l'alignement", src: "https://www.senat.fr/leg/ppr25-053.html" },
+  { name: "René Pilato", orgs: ["senat"], role: "Député (LFI) ; auteur de la proposition de loi pour des systèmes d'IA éthiques et sécurisés (sept. 2026)", src: "https://www.assemblee-nationale.fr/dyn/opendata/PIONANR5L17B3149.html" },
   { name: "Erin Constance", orgs: ["nm"], role: "Fondatrice", src: "https://nouvellemachine.com" },
 
   // Médias
@@ -192,6 +214,11 @@ var ECO_PEOPLE = [
 
 // Autres liens publics entre acteurs (chacun sourcé). a / b = nom d'une personne ou id d'organisation.
 var ECO_LINKS = [
+  { a: "inesia", b: "anssi", label: "Composante de l'INESIA", src: "https://www.entreprises.gouv.fr/espace-presse/linstitut-national-pour-levaluation-et-la-securite-de-lia-adopte-sa-feuille-de-route" },
+  { a: "inesia", b: "inria", label: "Composante de l'INESIA", src: "https://www.entreprises.gouv.fr/espace-presse/linstitut-national-pour-levaluation-et-la-securite-de-lia-adopte-sa-feuille-de-route" },
+  { a: "inesia", b: "lne", label: "Composante de l'INESIA", src: "https://www.entreprises.gouv.fr/espace-presse/linstitut-national-pour-levaluation-et-la-securite-de-lia-adopte-sa-feuille-de-route" },
+  { a: "inesia", b: "peren", label: "Composante de l'INESIA", src: "https://www.entreprises.gouv.fr/espace-presse/linstitut-national-pour-levaluation-et-la-securite-de-lia-adopte-sa-feuille-de-route" },
+  { a: "Lucie Philippon", b: "aisafetyparis", label: "Autrice des ressources carrières d'AI Safety Paris", src: "https://aisafety.paris" },
   { a: "Léo Dana", b: "piaf", label: "Mentor des projets techniques", src: "https://piaf-saclay.org" },
   { a: "Erin Constance", b: "pauseia", label: "", src: "" },
   { a: "Charbel-Raphaël Ségerie", b: "ml4good", label: "Cofondateur d'ML4Good", src: "https://www.ml4good.org/about" },
