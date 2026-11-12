@@ -86,15 +86,7 @@
     .hint{font-size:.7rem}
   }
 
-  /* ---- Liste ---- */
-  .list{margin-top:44px}
-  .list h2{font-family:var(--serif);font-weight:400;font-size:1.7rem;color:var(--medium-blue);margin:28px 0 8px}
-  .org{border-top:1px solid var(--line);padding:14px 0}
-  .org h3{font-family:var(--serif);font-weight:400;font-size:1.25rem}
-  .org .desc{font-size:.92rem;color:var(--muted)}
-  .org ul{list-style:none;margin-top:6px}
-  .org li{font-size:.95rem;padding:2px 0}
-  .org li .r{color:var(--muted)}
+  /* ---- Note ---- */
   .src{font-size:.8rem;margin-left:4px}
   .note{margin:48px 0 0;padding:18px;border:1px solid var(--cotton-rose);font-size:.92rem}
   footer{padding:44px 0;text-align:center;border-top:1px solid var(--cotton-rose);font-size:.9rem;margin-top:40px}
@@ -111,7 +103,7 @@
 <header class="hero"><div class="wrap">
   <h1>Qui fait quoi en sûreté de l'IA</h1>
   <p class="dek">La carte de l'écosystème francophone : organisations, personnes, liens.</p>
-  <p class="lead">Pour s'impliquer, il faut savoir qui travaille sur quoi. Cette carte rassemble celles et ceux qui, en France, travaillent sur les risques de l'IA avancée, et quelques voix qui les contestent. Zoomez pour voir les noms, cliquez sur un point pour suivre ses liens.</p>
+  <p class="lead">Cette carte rassemble celles et ceux qui, en France, travaillent sur les risques de l'IA avancée, et quelques voix qui les contestent. Zoomez pour voir les noms, cliquez sur un point pour suivre ses liens.</p>
 </div></header>
 
 <main>
@@ -122,7 +114,7 @@
       <div class="chips" id="chips" role="group" aria-label="Mettre en avant une catégorie"></div>
     </div>
     <div class="stage" id="stage">
-      <svg id="map" role="img" aria-label="Carte en réseau des organisations et des personnes de la sûreté de l'IA en France. La même information figure en liste sous la carte."></svg>
+      <svg id="map" role="img" aria-label="Carte en réseau des organisations et des personnes de la sûreté de l'IA en France."></svg>
       <div class="hint" id="hint">Molette ou pincement pour zoomer · glisser pour se déplacer</div>
       <div class="tip" id="tip"></div>
       <div class="zoomctl">
@@ -140,8 +132,7 @@
   </div>
 
   <div class="wrap">
-    <section class="list" id="list" aria-label="Liste complète"></section>
-    <p class="note">Toutes les informations viennent de sources publiques : pages équipe des organisations, profils LinkedIn publics, presse. Chaque fiche renvoie à sa source. Dernière vérification : <span id="updated"></span>. Une erreur, un rôle qui a changé, ou vous préférez ne pas figurer sur la carte ? <a href="https://cal.com/saintgull/call">Écrivez-nous</a> et nous corrigeons ou retirons sans discuter.</p>
+    <p class="note">Cette carte est une classification personnelle : elle ne reflète pas les opinions des personnes et des organisations qui y figurent. Toutes les informations viennent de sources publiques : pages équipe des organisations, profils LinkedIn publics, presse. Chaque fiche renvoie à sa source. Dernière vérification : <span id="updated"></span>. Une erreur, un rôle qui a changé, ou vous préférez ne pas figurer sur la carte ? <a href="https://cal.com/saintgull/call">Écrivez-nous</a> et nous corrigeons ou retirons sans discuter.</p>
   </div>
 </main>
 
@@ -368,22 +359,6 @@
   var lastW = stage.clientWidth;
   window.addEventListener("resize", function(){ if (stage.clientWidth !== lastW) { lastW = stage.clientWidth; fit(0); } });
 
-  // ---- Liste (vue texte complète ; chaque nom renvoie vers LinkedIn, sinon vers la source) ----
-  var html = "";
-  cats.forEach(function(c){
-    html += "<h2>" + esc(c.label) + "</h2>";
-    ECO_ORGS.filter(function(o){ return o.cat === c.id; }).forEach(function(o){
-      var ppl = ECO_PEOPLE.filter(function(p){ return p.orgs.indexOf(o.id) >= 0; });
-      html += '<div class="org"><h3>' + (o.url ? '<a href="' + esc(o.url) + '" target="_blank" rel="noopener">' + esc(o.name) + "</a>" : esc(o.name)) +
-        (o.country ? ' <span class="desc">(' + esc(o.country) + ")</span>" : "") + '</h3><p class="desc">' + esc(o.desc) + "</p>";
-      if (ppl.length) html += "<ul>" + ppl.map(function(p){
-        return '<li><a href="' + esc(p.li || p.src) + '" target="_blank" rel="noopener"><strong>' + esc(p.name) + '</strong></a>, <span class="r">' + esc(p.role) + "</span>" +
-          (p.li ? '<a class="src" href="' + esc(p.src) + '" target="_blank" rel="noopener">source</a>' : "") + "</li>";
-      }).join("") + "</ul>";
-      html += "</div>";
-    });
-  });
-  document.getElementById("list").innerHTML = html;
 })();
 </script>
 </body>

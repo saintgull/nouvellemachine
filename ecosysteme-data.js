@@ -90,7 +90,6 @@ var ECO_PEOPLE = [
   { name: "Eloïse Benito-Rodriguez", orgs: ["pauseia"], role: "Chercheuse indépendante en sécurité de l'IA, membre de Pause IA",
     src: "https://pauseia.fr/en/qui-sommes-nous" },
   { name: "Gabriel Alfour", li: "https://www.linkedin.com/in/gabriel-alfour/", orgs: ["controlai"], role: "Conseiller ; cofondateur de Conjecture", src: "https://controlai.org/about" },
-  { name: "Adam Shimi", li: "https://www.linkedin.com/in/adam-shimi-23b27a125/", orgs: ["controlai"], role: "Chercheur en politiques publiques", src: "https://controlai.org/about" },
 
   // Policy
   { name: "Charbel-Raphaël Ségerie", li: "https://www.linkedin.com/in/charbel-raphael-segerie/", orgs: ["cesia"], role: "Directeur exécutif et cofondateur", src: "https://cesia.org/en/about/" },
@@ -104,8 +103,6 @@ var ECO_PEOPLE = [
     src: "https://slimemoldtimemold.com/2026/08/21/meet-the-meetups-czar/" },
   { name: "Épiphanie Gédéon", li: "https://www.linkedin.com/in/%C3%A9piphanie-g%C3%A9d%C3%A9on-434a07163/", orgs: ["cesia"], role: "Chercheuse en sûreté de l'IA ; écrit sur LessWrong et l'Alignment Forum",
     src: "https://www.alignmentforum.org/users/epiphanie-gedeon" },
-  { name: "Axelle Arquié", li: "https://www.linkedin.com/in/axelle-arqui%C3%A9-0818a124", orgs: ["inde-recherche"], role: "Économiste au CEPII ; cofondatrice de l'Observatoire des emplois menacés et émergents ; intervenante au colloque de Pause IA au Sénat (oct. 2025)",
-    src: "https://pauseia.fr/pdfs/compte-rendu-senat-2025.pdf" },
   { name: "Chloé Touzet", li: "https://www.linkedin.com/in/chloetouzet/", orgs: ["saferai"], role: "Responsable policy", src: "https://www.safer-ai.org/about" },
   { name: "Alexandre Variengien", li: "https://www.linkedin.com/in/alexandre-variengien-1b68aa1b5/", orgs: ["inde-recherche"], role: "Cofondateur du CeSIA ; a dirigé le benchmark BELLS",
     src: "https://www.alignmentforum.org/posts/rCLs56wfissFheLap/announcing-cesia-the-french-center-for-ai-safety" },
@@ -186,7 +183,11 @@ var ECO_PEOPLE = [
   { name: "Luc Julia", orgs: ["critiques"], role: "Ingénieur en IA ; auteur de L'intelligence artificielle n'existe pas (2019) et IA génératives, pas créatives (2025)",
     src: "https://fr.wikipedia.org/wiki/Luc_Julia" },
   { name: "Benjamin Pajot", li: "https://www.linkedin.com/in/benjamin-pajot-49a733a0/", orgs: ["critiques"], role: "Chercheur à l'IFRI ; auteur de la note « L'IA hors de sa boîte : apocalypse now ? » (oct. 2026)",
-    src: "https://www.ifri.org/sites/default/files/2026-10/ifri_pajot_ia_hors_de_sa_boite_2026.pdf" }
+    src: "https://www.ifri.org/sites/default/files/2026-10/ifri_pajot_ia_hors_de_sa_boite_2026.pdf" },
+  { name: "Thibault Prévost", orgs: ["critiques"], role: "Journaliste ; auteur de Les prophètes de l'IA. Pourquoi la Silicon Valley nous vend l'apocalypse (Lux, 2024)",
+    src: "https://luxediteur.com/catalogue/les-prophetes-de-lia/" },
+  { name: "Irénée Régnauld", orgs: ["critiques"], role: "Auteur du blog Mais où va le Web ? ; auteur de La sommation technologique",
+    src: "https://maisouvaleweb.fr/a-propos/" }
 ];
 
 // Autres liens publics entre acteurs (chacun sourcé). a / b = nom d'une personne ou id d'organisation.
@@ -198,7 +199,6 @@ var ECO_LINKS = [
   { a: "effisciences", b: "ml4good", label: "A porté les premiers bootcamps ML4Good", src: "https://www.ml4good.org/about" },
   { a: "Siméon Campos", b: "effisciences", label: "Cofondateur d'EffiSciences", src: "https://oecd.ai/en/community/simeon-campos" },
   { a: "Siméon Campos", b: "cesia", label: "Conseiller du CeSIA (2024)", src: "https://www.lesswrong.com/posts/rCLs56wfissFheLap/announcing-cesia-the-french-center-for-ai-safety" },
-  { a: "Adam Shimi", b: "cesia", label: "Membre du CA du CeSIA (2024)", src: "https://www.lesswrong.com/posts/rCLs56wfissFheLap/announcing-cesia-the-french-center-for-ai-safety" },
   { a: "Alexandre Variengien", b: "cesia", label: "Cofondateur du CeSIA", src: "https://www.lesswrong.com/posts/rCLs56wfissFheLap/announcing-cesia-the-french-center-for-ai-safety" },
   { a: "Vincent Corruble", b: "cesia", label: "Directeur scientifique du CeSIA", src: "https://manifund.org/projects/cesia" },
   { a: "Diego Dorn", b: "Alexandre Variengien", label: "Coauteurs du benchmark BELLS (2024)", src: "https://arxiv.org/abs/2406.01364" },
@@ -207,7 +207,6 @@ var ECO_LINKS = [
   { a: "Lê Nguyên Hoang", b: "El Mahdi El Mhamdi", label: "Coauteurs de Le fabuleux chantier (2019)", src: "https://www.eyrolles.com/Sciences/Livre/le-fabuleux-chantier-9782759823611/" },
   { a: "Ghislaine Senée", b: "pauseia", label: "Colloque au Sénat co-organisé avec Pause IA (31 oct. 2025)", src: "https://pauseia.fr/senat2025" },
   { a: "Thomas Dossus", b: "pauseia", label: "Colloque au Sénat co-organisé avec Pause IA (31 oct. 2025)", src: "https://pauseia.fr/senat2025" },
-  { a: "Axelle Arquié", b: "pauseia", label: "Intervenante au colloque de Pause IA au Sénat (oct. 2025)", src: "https://pauseia.fr/pdfs/compte-rendu-senat-2025.pdf" },
   { a: "Henry Papadatos", b: "pauseia", label: "Intervenant au colloque de Pause IA au Sénat (oct. 2025)", src: "https://pauseia.fr/pdfs/compte-rendu-senat-2025.pdf" },
   { a: "Maxime Fournes", b: "futurologue", label: "Invité du Futurologue", src: "https://creators.spotify.com/pod/profile/futurolgue/episodes/Il-Est-Urgent-De-Mettre-lIA-En-Pause-----Maxime-Fournes-e3bq8ad" },
   { a: "Thibaut Giraud", b: "futurologue", label: "Invité du Futurologue", src: "https://creators.spotify.com/pod/profile/futurolgue/episodes/Un-philosophe-face--lintelligence-artificielle---Monsieur-Phi-e3bq8bj" },
