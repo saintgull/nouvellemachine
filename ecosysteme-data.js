@@ -114,8 +114,8 @@ var ECO_PEOPLE = [
   { name: "Tom David", li: "https://www.linkedin.com/in/tom-david-a33444259/", orgs: ["gpai"], role: "Cofondateur et CEO", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
   { name: "Jérémy Andréoletti", li: "https://www.linkedin.com/in/jeremy-andreoletti-330445216", orgs: ["gpai"], role: "Directeur de la recherche", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
   { name: "Pierre Peigné", li: "https://www.linkedin.com/in/pierre-peign%C3%A9-146b6316a/", orgs: ["gpai"], role: "Chercheur en sécurité de l'IA", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
-  { name: "Jérémy Perret", li: "https://www.linkedin.com/in/j%C3%A9r%C3%A9my-perret-b22a72b9/", orgs: ["aef"], role: "Opérations et comptabilité ; chercheur en sécurité de l'IA, docteur en IA",
-    src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Jérémy Perret", li: "https://www.linkedin.com/in/j%C3%A9r%C3%A9my-perret-b22a72b9/", orgs: ["pauseia"], role: "Expertise technique",
+    src: "https://pauseia.fr/pdfs/communique_de_presse_forum_des_solutions.pdf" },
 
   // Technique
   { name: "Yoshua Bengio", li: "https://www.linkedin.com/in/yoshuabengio", orgs: ["lawzero"], role: "Fondateur, coprésident et directeur scientifique ; prix Turing",
@@ -160,7 +160,7 @@ var ECO_PEOPLE = [
   { name: "Alix Pham", orgs: ["aef"], role: "Responsable programmes et initiatives", src: "https://www.altruismeefficacefrance.org/a-propos" },
   { name: "Estéban Collas", orgs: ["piaf"], role: "Président", src: "https://piaf-saclay.org" },
   { name: "Lenny Provost", orgs: ["piaf"], role: "Trésorier", src: "https://piaf-saclay.org" },
-  { name: "Léo Dana", orgs: ["piaf"], role: "Mentor des projets techniques", src: "https://piaf-saclay.org" },
+  { name: "Léo Dana", orgs: ["effisciences"], role: "EffiSciences ; mentor des projets techniques de P.I.A.F.", src: "https://piaf-saclay.org" },
   { name: "Martin Kunev", li: "https://www.linkedin.com/in/martin-kunev-30863674", orgs: ["pauseia"], role: "Responsable du groupe local de Paris", src: "https://www.linkedin.com/in/martin-kunev-30863674" },
   { name: "Nada Hegazy", orgs: ["saferai"], role: "Opérations et assistanat de direction", src: "https://www.safer-ai.org/about" },
   { name: "Nia Gardner", orgs: ["ml4good"], role: "Membre du conseil d'administration ; ancienne directrice exécutive",
@@ -191,6 +191,7 @@ var ECO_PEOPLE = [
 
 // Autres liens publics entre acteurs (chacun sourcé). a / b = nom d'une personne ou id d'organisation.
 var ECO_LINKS = [
+  { a: "Léo Dana", b: "piaf", label: "Mentor des projets techniques", src: "https://piaf-saclay.org" },
   { a: "Erin Constance", b: "pauseia", label: "", src: "" },
   { a: "Charbel-Raphaël Ségerie", b: "ml4good", label: "Cofondateur d'ML4Good", src: "https://www.ml4good.org/about" },
   { a: "effisciences", b: "cesia", label: "EffiSciences a lancé le CeSIA (mai 2024)", src: "https://manifund.org/projects/cesia" },
@@ -208,7 +209,6 @@ var ECO_LINKS = [
   { a: "Thomas Dossus", b: "pauseia", label: "Colloque au Sénat co-organisé avec Pause IA (31 oct. 2025)", src: "https://pauseia.fr/senat2025" },
   { a: "Axelle Arquié", b: "pauseia", label: "Intervenante au colloque de Pause IA au Sénat (oct. 2025)", src: "https://pauseia.fr/pdfs/compte-rendu-senat-2025.pdf" },
   { a: "Henry Papadatos", b: "pauseia", label: "Intervenant au colloque de Pause IA au Sénat (oct. 2025)", src: "https://pauseia.fr/pdfs/compte-rendu-senat-2025.pdf" },
-  { a: "Jérémy Perret", b: "pauseia", label: "Intervenant au Forum des Solutions de Pause IA (2025)", src: "https://pauseia.fr/pdfs/communique_de_presse_forum_des_solutions.pdf" },
   { a: "Maxime Fournes", b: "futurologue", label: "Invité du Futurologue", src: "https://creators.spotify.com/pod/profile/futurolgue/episodes/Il-Est-Urgent-De-Mettre-lIA-En-Pause-----Maxime-Fournes-e3bq8ad" },
   { a: "Thibaut Giraud", b: "futurologue", label: "Invité du Futurologue", src: "https://creators.spotify.com/pod/profile/futurolgue/episodes/Un-philosophe-face--lintelligence-artificielle---Monsieur-Phi-e3bq8bj" },
   { a: "Maxime Fournes", b: "Luc Julia", label: "Débat sur Le Futurologue (16 juin 2025)", src: "https://podcastrepublic.net/podcast/1581253272" },
