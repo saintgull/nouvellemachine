@@ -330,12 +330,12 @@
     }
     var mem = n.nb.filter(function(x){ return x.e.kind === "member"; }), rel = n.nb.filter(function(x){ return x.e.kind === "rel"; });
     function row(x){
-      var sub = x.e.kind === "rel" ? x.e.label : (x.n.kind === "person" ? x.n.d.role : catById[x.n.cat].label);
+      var sub = x.e.kind === "rel" ? (x.e.label || "") : (x.n.kind === "person" ? x.n.d.role : catById[x.n.cat].label);
       return '<li><button data-k="' + esc(x.n.key) + '"><b>' + esc(x.n.name) + "</b><span>" + esc(sub) + "</span></button></li>";
     }
     if (mem.length) h += "<h4>" + (n.kind === "org" ? "Personnes" : "Organisations") + "</h4><ul>" + mem.map(row).join("") + "</ul>";
     if (rel.length) h += "<h4>Autres liens publics</h4><ul>" + rel.map(row).join("") + '</ul><p class="srcs">' +
-      rel.map(function(x, i){ return '<a href="' + esc(x.e.src) + '" target="_blank" rel="noopener">source ' + (i + 1) + "</a>"; }).join(" · ") + "</p>";
+      rel.filter(function(x){ return x.e.src; }).map(function(x, i){ return '<a href="' + esc(x.e.src) + '" target="_blank" rel="noopener">source ' + (i + 1) + "</a>"; }).join(" · ") + "</p>";
     panel.innerHTML = h; panel.classList.add("open"); panel.scrollTop = 0;
     panel.querySelector(".close").onclick = function(){ select(null); };
     panel.querySelectorAll("li button").forEach(function(b){ b.onclick = function(){ select(byKey[b.dataset.k], true); }; });

@@ -191,6 +191,7 @@ var ECO_PEOPLE = [
 
 // Autres liens publics entre acteurs (chacun sourcé). a / b = nom d'une personne ou id d'organisation.
 var ECO_LINKS = [
+  { a: "Erin Constance", b: "pauseia", label: "", src: "" },
   { a: "Charbel-Raphaël Ségerie", b: "ml4good", label: "Cofondateur d'ML4Good", src: "https://www.ml4good.org/about" },
   { a: "effisciences", b: "cesia", label: "EffiSciences a lancé le CeSIA (mai 2024)", src: "https://manifund.org/projects/cesia" },
   { a: "effisciences", b: "ml4good", label: "A porté les premiers bootcamps ML4Good", src: "https://www.ml4good.org/about" },
