@@ -2,9 +2,10 @@
 // Règle : n'entre ici que ce que la personne ou son organisation a rendu public.
 // Chaque personne a une source (page équipe, profil public, presse). Vérifié le 2026-11-10.
 // li = profil LinkedIn public (trouvé via la page équipe de l'orga ou un résultat de recherche).
+// PIAF (Collas, Provost), nom complet d'Eloïse, lien Erin–Pause IA : confirmés par Erin le 2026-11-12.
 // Hors carte en attendant confirmation : voir Obsidian, DATABASE PERSONNES-ORGA (revue publique).
 
-var ECO_UPDATED = "10 novembre 2026";
+var ECO_UPDATED = "12 novembre 2026";
 
 var ECO_CATS = [
   { id: "mouvement", label: "Mouvement citoyen & plaidoyer" },
@@ -86,7 +87,7 @@ var ECO_PEOPLE = [
   { name: "Maxime Fournes", li: "https://www.linkedin.com/in/maximefournes/", orgs: ["pauseai", "pauseia"], role: "CEO de PauseAI Global ; cofondateur et président de Pause IA",
     src: "https://pauseia.fr/en/qui-sommes-nous" },
   { name: "Clémence Peyrot", orgs: ["pauseia"], role: "Directrice exécutive", src: "https://pauseia.fr/en/qui-sommes-nous" },
-  { name: "Éloïse", orgs: ["pauseia"], role: "Chercheuse indépendante en sécurité de l'IA, membre de Pause IA",
+  { name: "Eloïse Benito-Rodriguez", orgs: ["pauseia"], role: "Chercheuse indépendante en sécurité de l'IA, membre de Pause IA",
     src: "https://pauseia.fr/en/qui-sommes-nous" },
   { name: "Gabriel Alfour", li: "https://www.linkedin.com/in/gabriel-alfour/", orgs: ["controlai"], role: "Conseiller ; cofondateur de Conjecture", src: "https://controlai.org/about" },
   { name: "Adam Shimi", li: "https://www.linkedin.com/in/adam-shimi-23b27a125/", orgs: ["controlai"], role: "Chercheur en politiques publiques", src: "https://controlai.org/about" },
@@ -120,7 +121,7 @@ var ECO_PEOPLE = [
   { name: "Yoshua Bengio", li: "https://www.linkedin.com/in/yoshuabengio", orgs: ["lawzero"], role: "Fondateur, coprésident et directeur scientifique ; prix Turing",
     src: "https://lawzero.org/en/team" },
   { name: "Denis Shilov", li: "https://www.linkedin.com/in/mixeden/", orgs: ["whitecircle"], role: "Fondateur", src: "https://sifted.eu/articles/denis-shilov-white-circle-ai-safety/" },
-  { name: "Alex Combessie", li: "https://www.linkedin.com/in/alexcombessie", orgs: ["giskard"], role: "Cofondateur et CEO ; pilote le benchmark Phare", src: "https://arxiv.org/pdf/2505.11365" },
+  { name: "Alex Combessie", li: "https://www.linkedin.com/in/alexcombessie", orgs: ["giskard"], role: "Cofondateur et co-CEO ; pilote le benchmark Phare", src: "https://arxiv.org/pdf/2505.11365" },
   { name: "Vincent Corruble", li: "https://www.linkedin.com/in/vincent-corruble-3903461/", orgs: ["universites"], role: "Maître de conférences, Sorbonne Université (LIP6) ; a organisé le Paris AI Safety Symposium (2024)",
     src: "https://scai.sorbonne-universite.fr/events/paris-ai-safety-symposium-839" },
   { name: "El Mahdi El Mhamdi", li: "https://www.linkedin.com/in/mahdielmhamdi", orgs: ["universites"], role: "Professeur à l'École polytechnique ; coauteur de Le fabuleux chantier",
@@ -151,7 +152,31 @@ var ECO_PEOPLE = [
   { name: "Madeleine Amiel-Jourdaa", li: "https://www.linkedin.com/in/madeleine-amiel-jourdaa/", orgs: ["aef"], role: "Présidente du conseil d'administration", src: "https://www.altruismeefficacefrance.org/a-propos" },
   { name: "Capucine Griot", li: "https://www.linkedin.com/in/capucine-griot/", orgs: ["aef"], role: "Directrice", src: "https://www.altruismeefficacefrance.org/a-propos" },
   { name: "Corentin Biteau", li: "https://www.linkedin.com/in/corentin-biteau-365299117/", orgs: ["aef"], role: "Chargé de recherche", src: "https://www.altruismeefficacefrance.org/a-propos" },
-  { name: "Antonin Peronnet", li: "https://www.linkedin.com/in/antonin-peronnet-a5496a242", orgs: ["piaf"], role: "Étudiant à Télécom Paris ; membre de P.I.A.F. Saclay", src: "https://github.com/rambip" },
+  { name: "Antonin Peronnet", li: "https://www.linkedin.com/in/antonin-peronnet-a5496a242", orgs: ["piaf"], role: "Étudiant à Télécom Paris ; organise le cycle de conférences Asimov", src: "https://luma.com/lldc4hn1" },
+  { name: "Andrew Byrley", orgs: ["cesia"], role: "Chargé senior des relations avec l'UE", src: "https://cesia.org/en/about/" },
+  { name: "Lauri Aarnio", orgs: ["cesia"], role: "Responsable senior de la communication", src: "https://cesia.org/en/about/" },
+  { name: "Jan Króliński", orgs: ["cesia"], role: "Analyste policy senior", src: "https://cesia.org/en/about/" },
+  { name: "Isabella Morgott", orgs: ["cesia"], role: "Chargée de plaidoyer", src: "https://cesia.org/en/about/" },
+  { name: "Lola Carbonell", orgs: ["gpai"], role: "Cofondatrice ; secrétaire générale et directrice des affaires internationales", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Paul Fictor", orgs: ["gpai"], role: "Directeur des opérations", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Antoine Maier", orgs: ["gpai"], role: "Chercheur en sécurité de l'IA", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Tangui Reltgen", orgs: ["gpai"], role: "Chercheur en sécurité de l'IA", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Julia Pagani", orgs: ["gpai"], role: "Assistante de projet, international", src: "https://www.gpaipolicylab.org/gpai-policy-lab" },
+  { name: "Jean-Marie John-Mathews", orgs: ["giskard"], role: "Cofondateur et co-CEO", src: "https://giskard.ai/about" },
+  { name: "Pierre Le Jeune", orgs: ["giskard"], role: "Responsable de la recherche en IA", src: "https://giskard.ai/about" },
+  { name: "Timothée Lacroix", orgs: ["mistral"], role: "Cofondateur", src: "https://en.wikipedia.org/wiki/Arthur_Mensch" },
+  { name: "Linda Broglio", orgs: ["ml4good"], role: "Responsable des programmes", src: "https://www.ml4good.org/about" },
+  { name: "Eleanor Ellis", orgs: ["ml4good"], role: "Responsable des opérations", src: "https://www.ml4good.org/about" },
+  { name: "Solal Stern", orgs: ["aef"], role: "Secrétaire général du conseil d'administration", src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Hugo Marro-Menotti", orgs: ["aef"], role: "Trésorier du conseil d'administration", src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Antonin Broi", orgs: ["aef"], role: "Administrateur", src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Elisa Autric", orgs: ["aef"], role: "Administratrice", src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Vincent Niger", orgs: ["aef"], role: "Administrateur", src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Guillaume Vorreux", orgs: ["aef"], role: "Directeur du programme Job Engagé", src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Alix Pham", orgs: ["aef"], role: "Responsable programmes et initiatives", src: "https://www.altruismeefficacefrance.org/a-propos" },
+  { name: "Estéban Collas", orgs: ["piaf"], role: "Président", src: "https://piaf-saclay.org" },
+  { name: "Lenny Provost", orgs: ["piaf"], role: "Trésorier", src: "https://piaf-saclay.org" },
+  { name: "Linh Vu Tu", orgs: ["piaf"], role: "Organise le cycle de conférences Asimov", src: "https://luma.com/lldc4hn1" },
   { name: "Erin Constance", orgs: ["nm"], role: "Fondatrice", src: "https://nouvellemachine.com" },
 
   // Médias
@@ -178,6 +203,7 @@ var ECO_PEOPLE = [
 
 // Autres liens publics entre acteurs (chacun sourcé). a / b = nom d'une personne ou id d'organisation.
 var ECO_LINKS = [
+  { a: "Erin Constance", b: "pauseia", label: "Responsable du développement territorial et de la communauté (à partir de nov. 2026)", src: "https://nouvellemachine.com" },
   { a: "Charbel-Raphaël Ségerie", b: "ml4good", label: "Cofondateur d'ML4Good", src: "https://www.ml4good.org/about" },
   { a: "effisciences", b: "cesia", label: "EffiSciences a lancé le CeSIA (mai 2024)", src: "https://manifund.org/projects/cesia" },
   { a: "effisciences", b: "ml4good", label: "A porté les premiers bootcamps ML4Good", src: "https://www.ml4good.org/about" },
