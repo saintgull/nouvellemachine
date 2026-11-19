@@ -5,7 +5,7 @@
 // Maxime Galpin, PIAF (Collas, Provost, Dana), nom complet d'Eloïse, rôle de Martin Kunev : confirmés par Erin le 2026-11-12.
 // Hors carte en attendant confirmation : voir Obsidian, DATABASE PERSONNES-ORGA (revue publique).
 
-var ECO_UPDATED = "12 novembre 2026";
+var ECO_UPDATED = "19 novembre 2026";
 
 var ECO_CATS = [
   { id: "mouvement", label: "Mouvement citoyen & plaidoyer" },
@@ -214,6 +214,7 @@ var ECO_PEOPLE = [
 
 // Autres liens publics entre acteurs (chacun sourcé). a / b = nom d'une personne ou id d'organisation.
 var ECO_LINKS = [
+  { a: "Antonin Peronnet", b: "pauseia", label: "", src: "" },
   { a: "inesia", b: "anssi", label: "Composante de l'INESIA", src: "https://www.entreprises.gouv.fr/espace-presse/linstitut-national-pour-levaluation-et-la-securite-de-lia-adopte-sa-feuille-de-route" },
   { a: "inesia", b: "inria", label: "Composante de l'INESIA", src: "https://www.entreprises.gouv.fr/espace-presse/linstitut-national-pour-levaluation-et-la-securite-de-lia-adopte-sa-feuille-de-route" },
   { a: "inesia", b: "lne", label: "Composante de l'INESIA", src: "https://www.entreprises.gouv.fr/espace-presse/linstitut-national-pour-levaluation-et-la-securite-de-lia-adopte-sa-feuille-de-route" },
