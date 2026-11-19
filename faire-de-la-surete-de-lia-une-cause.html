@@ -55,12 +55,26 @@
   footer .socials{display:flex;gap:20px;justify-content:center;margin-top:12px;flex-wrap:wrap}
   footer .copyright{display:block;margin-top:22px;font-size:.82rem;color:var(--ink);opacity:.5}
 </style>
+<style id="site-chrome">
+  /* Barre du haut et pied de page communs à toutes les sous-pages */
+  .topnav{border-bottom:1px solid #ffcfd2;background:#fffdfa;line-height:1.5}
+  .topnav .bar{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .topnav .brand{font-family:'Instrument Serif',Georgia,serif;font-size:1.15rem;color:#0700cc;text-decoration:none}
+  .topnav .navlinks{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+  .topnav .navlinks a{font-family:'Work Sans',system-ui,sans-serif;font-size:.9rem;margin:0;color:#14142e;text-decoration:none;letter-spacing:.02em}
+  .topnav .navlinks a:hover,.topnav .navlinks a[aria-current="page"]{color:#e0486b}
+  .site-footer{padding:44px 24px;margin-top:40px;text-align:center;border-top:1px solid #ffcfd2;font-family:'Work Sans',system-ui,sans-serif;font-size:.9rem;font-weight:300;color:#14142e;line-height:1.6}
+  .site-footer a{color:#0700cc;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+  .site-footer a:hover{color:#e0486b}
+  .site-footer .socials{display:flex;gap:20px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+  .site-footer .copyright{display:block;margin-top:22px;font-size:.82rem;opacity:.5}
+</style>
 </head>
 <body>
 
-<nav class="topnav"><div class="wrap">
+<nav class="topnav"><div class="bar">
   <a class="brand" href="/">Nouvelle Machine</a>
-  <span class="navlinks"><a href="/articles">Articles</a><a href="/ecosysteme">Carte</a><a href="/song">Clip</a></span>
+  <span class="navlinks"><a href="/articles" aria-current="page">Articles</a><a href="/ecosysteme">Carte</a><a href="/song">Clip</a></span>
 </div></nav>
 
 <header class="hero"><div class="wrap">
@@ -105,7 +119,7 @@
   </div>
 </div></article>
 
-<footer><div class="wrap">
+<footer class="site-footer">
   <p>Paris · <a href="https://cal.com/saintgull/call">me contacter</a></p>
   <div class="socials">
     <a href="https://nouvellemachine.substack.com" target="_blank" rel="noopener">Substack</a>
@@ -114,7 +128,7 @@
     <a href="https://www.linkedin.com/company/nouvellemachine" target="_blank" rel="noopener">LinkedIn</a>
   </div>
   <span class="copyright">© 2026 Erin Constance</span>
-</div></footer>
+</footer>
 
 </body>
 </html>
