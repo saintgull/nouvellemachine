@@ -106,8 +106,6 @@
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
-  .map-line{max-width:620px;margin:-18px auto 30px;text-align:center;font-size:1rem}
-  .map-line a{text-decoration:underline;text-underline-offset:2px}
   .more-res{max-width:620px;margin:30px auto 0;text-align:center;font-size:1rem}
   .more-res a{text-decoration:underline;text-underline-offset:2px}
   a.res{display:flex;flex-direction:column;padding:22px;border:1px solid var(--light-blue);background:#fff;transition:background .15s;color:var(--ink)}
@@ -207,7 +205,7 @@
   <header class="site-hero"><div class="wrap">
     <h1>Nouvelle Machine</h1>
     <p class="tagline" data-i18n="tagline">Une newsletter et une communauté pour penser l'intelligence artificielle et sa sécurité : des écrits, des rencontres, et des dîners hebdomadaires à Paris.</p>
-    <p class="hero-nav" style="margin-top:16px;font-size:.95rem"><a href="/articles">Articles</a> &nbsp;·&nbsp; <a href="/ecosysteme">Carte de l'écosystème</a> &nbsp;·&nbsp; <a href="/song">Clip</a></p>
+    <p class="hero-nav" style="margin-top:16px;font-size:.95rem"><a href="/articles">Articles</a> &nbsp;·&nbsp; <a href="/song">Clip</a></p>
   </div></header>
 
   <div class="wrap"><div class="two-col">
@@ -234,7 +232,6 @@
   <section class="resources"><div class="wrap">
     <h2 class="section-title" data-i18n="res_title">Pour commencer</h2>
     <p class="section-lead" data-i18n="res_lead">Envie de comprendre l'IA et sa sûreté, ou de vous impliquer ? Voici une sélection de bons points de départ.</p>
-    <p class="map-line" data-i18n="res_map">Qui fait quoi en France ? <a href="/ecosysteme">Voir la carte de l'écosystème →</a></p>
     <div class="grid">
       <a class="res" href="https://cesia.org" target="_blank" rel="noopener"><h3>CeSIA</h3><p data-i18n="res_cesia">Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.</p><span class="go">cesia.org →</span></a>
       <a class="res" href="https://ml4good.org" target="_blank" rel="noopener"><h3>ML4Good</h3><p data-i18n="res_ml4good">Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.</p><span class="go">ml4good.org →</span></a>
@@ -299,7 +296,6 @@
       article_dek: "Trois dîners, un premier Banc d'Essai et un mois très chargé côté IA : le récap d'octobre.",
       article_cta: "Lire l'article →",
       res_title: "Pour commencer",
-      res_map: 'Qui fait quoi en France ? <a href="/ecosysteme">Voir la carte de l\'écosystème →</a>',
       res_lead: "Envie de comprendre l'IA et sa sûreté, ou de vous impliquer ? Voici une sélection de bons points de départ.",
       res_cesia: "Le Centre pour la sécurité de l'IA, à Paris. Recherche, formations et communauté francophone.",
       res_ml4good: "Des bootcamps intensifs et gratuits pour se lancer concrètement dans la sécurité de l'IA.",
@@ -339,7 +335,6 @@
       article_dek: "This article is only available in French. If you want a translated English version, feel free to request it in your anonymous feedback to us. You can find the link at the footer of our website.",
       article_cta: "Read the article →",
       res_title: "Where to start",
-      res_map: 'Who does what in France? <a href="/ecosystem">See the ecosystem map →</a>',
       res_lead: "Want to understand AI and its safety, or get involved? Here's a hand-picked set of good starting points.",
       res_cesia: "France's centre for AI safety, in Paris. Research, training and a French-speaking community.",
       res_ml4good: "Free, intensive bootcamps to get hands-on with AI safety.",
@@ -361,7 +356,7 @@
       footer_feedback: 'Thoughts on Nouvelle Machine? <a href="https://www.admonymous.co/nouvellemachine" target="_blank" rel="noopener">Tell us anything, anonymously →</a>'
     }
   };
-  var HTML_KEYS = { footer_line: true, footer_feedback: true, res_more: true, res_map: true };
+  var HTML_KEYS = { footer_line: true, footer_feedback: true, res_more: true };
 
   function show(id){
     var s = document.querySelectorAll('.screen');
